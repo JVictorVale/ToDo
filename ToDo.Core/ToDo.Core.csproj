@@ -12,4 +12,8 @@
       <ProjectReference Include="..\ToDo.Infra.Data\ToDo.Infra.Data.csproj" />
     </ItemGroup>
 
+    <ItemGroup>
+      <PackageReference Include="FluentValidation" Version="11.7.1" />
+    </ItemGroup>
+
 </Project>
