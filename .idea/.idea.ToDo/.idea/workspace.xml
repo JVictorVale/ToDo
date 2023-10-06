@@ -7,11 +7,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="a43affb7-c42e-44d8-af45-96da46f3fa50" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/ToDo.Domain/Contracts/Interfaces/IAssignmentRepository.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ToDo.Domain/Contracts/Interfaces/IUserRepository.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.ToDo/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.ToDo/.idea/workspace.xml" afterDir="false" />
-    </list>
+    <list default="true" id="a43affb7-c42e-44d8-af45-96da46f3fa50" name="Changes" comment="Interfaces de repositories encerradas" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -20,6 +16,7 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
+  <component name="MetaFilesCheckinStateConfiguration" checkMetaFiles="true" />
   <component name="ProjectColorInfo"><![CDATA[{
   "associatedIndex": 4
 }]]></component>
@@ -92,11 +89,25 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1691698325362</updated>
-      <workItem from="1696558368661" duration="2021000" />
+      <workItem from="1696558368661" duration="2367000" />
     </task>
+    <task id="LOCAL-00001" summary="Interfaces de repositories encerradas">
+      <option name="closed" value="true" />
+      <created>1696562415333</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1696562415333</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="UnityCheckinConfiguration" checkUnsavedScenes="true" />
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Interfaces de repositories encerradas" />
+    <option name="LAST_COMMIT_MESSAGE" value="Interfaces de repositories encerradas" />
   </component>
 </project>
