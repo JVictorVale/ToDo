@@ -1,4 +1,5 @@
-﻿using ToDo.Domain.Contracts.Interfaces;
+﻿using Microsoft.EntityFrameworkCore;
+using ToDo.Domain.Contracts.Interfaces;
 using ToDo.Domain.Models;
 using ToDo.Infra.Data.Context;
 
@@ -13,23 +14,28 @@ public class UserRepository : BaseRepository<User>, IUserRepository
         _dbContext = dbContext;
     }
 
-    public async Task<User> GetByEmailAsync(string email)
+    public async Task<User?> GetByEmailAsync(string email)
     {
-        throw new NotImplementedException();
+        return await _dbContext.Users
+            .FirstOrDefaultAsync(u => u != null && u.Email.ToLower() == email);
     }
 
     public async Task<User> GetByNameAsync(string name)
     {
-        throw new NotImplementedException();
+        return await _dbContext.Users.FirstOrDefaultAsync(u => u.Name == name);
     }
 
-    public async Task<List<User>> SearchByEmailAsync(string email)
+    public async Task<List<User?>> SearchByEmailAsync(string email)
     {
-        throw new NotImplementedException();
+        return await _dbContext.Users
+            .Where(u => u != null && u.Email.ToLower().Contains(email.ToLower()))
+            .ToListAsync();
     }
 
-    public async Task<List<User>> SearchByNameAsync(string name)
+    public async Task<List<User?>> SearchByNameAsync(string name)
     {
-        throw new NotImplementedException();
+        return await _dbContext.Users
+            .Where(u => u != null && u.Name.ToLower().Contains(name.ToLower()))
+            .ToListAsync();
     }
 }

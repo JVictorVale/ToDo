@@ -6,6 +6,6 @@ public interface IAssignmentListRepository : IBaseRepository<AssignmentList>
 {
     Task<AssignmentList> GetByIdAsync(int id, int userId);
     Task<List<AssignmentList>> SearchByNameAsync(string name);
-    Task<AssignmentList> GetByNameAsync(string name);
+    Task<AssignmentList> GetByNameAsync(string name, int userId);
     Task<List<AssignmentList>> GetAllAsync(int userId);
 }

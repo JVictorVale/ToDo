@@ -1,4 +1,5 @@
-﻿using ToDo.Domain.Contracts.Interfaces;
+﻿using Microsoft.EntityFrameworkCore;
+using ToDo.Domain.Contracts.Interfaces;
 using ToDo.Domain.Models;
 using ToDo.Infra.Data.Context;
 
@@ -15,26 +16,40 @@ public class BaseRepository<T> : IBaseRepository<T> where T : BaseEntity
 
     public async Task<T> CreateAsync(T obj)
     {
-        throw new NotImplementedException();
+        _dbContext.Add(obj);
+        await _dbContext.SaveChangesAsync();
+        return obj;
     }
 
     public async Task<T> UpdateAsync(T obj)
     {
-        throw new NotImplementedException();
+        _dbContext.Update(obj);
+        await _dbContext.SaveChangesAsync();
+
+        return obj;
     }
 
-    public async Task<T> RemoveAsync(int id)
+    public async Task<T?> RemoveAsync(int id)
     {
-        throw new NotImplementedException();
+        var obj = await GetByIdAsync(id);
+
+        _dbContext.Remove(obj);
+        await _dbContext.SaveChangesAsync();
+
+        return obj;
     }
 
-    public async Task<T> GetByIdAsync(int id)
+    public async Task<T?> GetByIdAsync(int id)
     {
-        throw new NotImplementedException();
+        return  await _dbContext.Set<T>()
+            .AsNoTracking()
+            .FirstOrDefaultAsync(x => x.Id == id);
     }
 
     public async Task<List<T>> GetAsync()
     {
-        throw new NotImplementedException();
+        return await _dbContext.Set<T>()
+            .AsNoTracking()
+            .ToListAsync();
     }
 }
