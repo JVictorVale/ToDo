@@ -7,11 +7,13 @@ namespace ToDo.Infra.Data.Repositories;
 
 public class BaseRepository<T> : IBaseRepository<T> where T : BaseEntity
 {
+    private readonly DbSet<T> _dbSet;
     private readonly ApplicationDbContext _dbContext;
 
-    public BaseRepository(ApplicationDbContext dbContext)
+    public BaseRepository(ApplicationDbContext dbContext, DbSet<T> dbSet)
     {
         _dbContext = dbContext;
+        _dbSet = dbSet;
     }
 
     public async Task<T> CreateAsync(T obj)
