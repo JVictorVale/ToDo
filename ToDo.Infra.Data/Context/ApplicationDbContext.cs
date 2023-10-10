@@ -1,6 +1,6 @@
-﻿using FluentValidation.Results;
-using Microsoft.EntityFrameworkCore;
+﻿using Microsoft.EntityFrameworkCore;
 using ToDo.Domain.Models;
+using ToDo.Infra.Data.Mappings;
 
 namespace ToDo.Infra.Data.Context;
 
@@ -15,7 +15,9 @@ public class ApplicationDbContext : DbContext
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
-        
+        modelBuilder.ApplyConfiguration(new UserMap());
+        modelBuilder.ApplyConfiguration(new AssignmentMap());
+        modelBuilder.ApplyConfiguration(new AssignmentListMap());
         base.OnModelCreating(modelBuilder);
     }
 }

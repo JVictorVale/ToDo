@@ -14,7 +14,6 @@ public static class DependencyInjection
     {
         var connectionString = configuration.GetConnectionString("DefaultConnection");
         var serverVersion = new MySqlServerVersion(ServerVersion.AutoDetect(connectionString));
-        
         services.AddDbContext<ApplicationDbContext>(options =>
         {
             options
