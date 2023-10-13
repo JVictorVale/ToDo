@@ -12,14 +12,17 @@ public class UserValidator : AbstractValidator<User>
             .WithMessage("O nome do usuário deve ser informado.")
 
             .Length(3, 30)
-            .WithMessage("Nome deve conter no mínimo 3 caracteres e no máximo 60 caracteres.");
+            .WithMessage("Nome deve conter no mínimo 3 e no máximo 60 caracteres.");
 
         RuleFor(u => u.Email)
             .NotEmpty()
             .WithMessage("E-mail do usuário deve ser informado.")
 
+            .EmailAddress()
+            .WithMessage("E-mail inválido")
+            
             .Length(3, 255)
-            .WithMessage("E-mail deve conter no mínimo 3 caracteres e no máximo 255 caracteres");
+            .WithMessage("E-mail deve conter no mínimo 3 e no máximo 255 caracteres");
 
         RuleFor(u => u.Password)
             .NotEmpty()

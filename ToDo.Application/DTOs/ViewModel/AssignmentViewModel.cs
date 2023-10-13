@@ -1,10 +1,8 @@
-namespace ToDo.Application.DTO;
+﻿namespace ToDo.Application.DTO.ViewModel;
 
-public class AssignmentDto
+public class AssignmentViewModel : DTOs.Base.Base
 {
-    public int Id { get; set; }
     public string Description { get; set; } = null!;
-    public int UserId { get; set; }
     public int? AssignmentListId { get; set; }
     public bool Concluded { get; set; }
     public DateTime? ConcludedAt { get; set; }
