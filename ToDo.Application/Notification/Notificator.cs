@@ -9,24 +9,26 @@ public class Notificator : INotificator
     
     public void Handle(string message)
     {
-        throw new NotImplementedException();
+        if (_notFoundResource)
+            throw new InvalidOperationException("Cannot call Handle when there are NotFoundResouce!");
+        _notifications.Add(message);
     }
 
     public void Handle(List<ValidationFailure> failures)
     {
-        throw new NotImplementedException();
+        failures.ForEach(error => Handle(error.ErrorMessage));
     }
 
     public void HandleNotFoundResource()
     {
-        throw new NotImplementedException();
+        if(HasNotification)
+            throw new InvalidOperationException("Cannot call HandleNotFoundResource when there are notifications!");
+
+        _notFoundResource = true;
     }
 
-    public IEnumerable<string> GetNotifications()
-    {
-        throw new NotImplementedException();
-    }
+    public IEnumerable<string> GetNotifications() => _notifications;
 
-    public bool HasNotification { get; }
-    public bool IsNotFoundResource { get; }
+    public bool HasNotification => _notifications.Any();
+    public bool IsNotFoundResource => _notFoundResource;
 }
