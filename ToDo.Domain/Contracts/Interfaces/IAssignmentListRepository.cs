@@ -4,8 +4,6 @@ namespace ToDo.Domain.Contracts.Interfaces;
 
 public interface IAssignmentListRepository : IBaseRepository<AssignmentList>
 {
-    Task<AssignmentList> GetByIdAsync(int id, int userId);
-    Task<List<AssignmentList>> SearchByNameAsync(string name);
-    Task<AssignmentList> GetByNameAsync(string name, int userId);
-    Task<List<AssignmentList>> GetAllAsync(int userId);
+    Task<IPagedResult<AssignmentList>> Search(int? userId, string name, string description, int perPage = 10, int page = 1);
+    Task<AssignmentList?> GetById(int? id, int? userId);
 }

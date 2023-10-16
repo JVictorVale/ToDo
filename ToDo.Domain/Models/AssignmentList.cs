@@ -7,6 +7,8 @@ namespace ToDo.Domain.Models;
 public class AssignmentList : BaseEntity
 {
     public string Name { get; set; } = null!;
+    
+    public string Description { get; set; } = null!;
     public int UserId { get; set; }
 
     public virtual User User { get; set; }

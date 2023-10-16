@@ -5,12 +5,12 @@ namespace ToDo.Application.Services;
 
 public abstract class BaseService
 {
-    protected readonly IMapper _mapper;
-    protected readonly INotificator _notificator;
+    protected readonly IMapper Mapper;
+    protected readonly INotificator Notificator;
 
     protected BaseService(IMapper mapper, INotificator notificator)
     {
-        _mapper = mapper;
-        _notificator = notificator;
+        Mapper = mapper;
+        Notificator = notificator;
     }
 }

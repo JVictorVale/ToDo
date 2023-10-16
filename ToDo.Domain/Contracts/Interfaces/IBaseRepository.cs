@@ -1,12 +1,16 @@
+using System.Linq.Expressions;
 using ToDo.Domain.Models;
 
 namespace ToDo.Domain.Contracts.Interfaces;
 
 public interface IBaseRepository<T> where T : BaseEntity
 {
-    Task<T> CreateAsync(T obj);
-    Task<T> UpdateAsync(T obj);
-    Task<T?> RemoveAsync(int id);
-    Task<T?> GetByIdAsync(int id);
-    Task<List<T>> GetAsync();
+    public IUnityOfWork UnityOfWork { get; }
+    
+    public Task<T?> FirstOrDefaultAsync(Expression<Func<T, bool>> expression);
+    void CreateAsync(T entity);
+    Task<T?> GetByIdAsync(int? id);
+    Task<List<T>> GetAllAsync();
+    void UpdateAsync(T entity);
+    void DeleteAsync(T entity);
 }

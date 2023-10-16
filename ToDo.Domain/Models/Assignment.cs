@@ -14,6 +14,18 @@ public class Assignment : BaseEntity
 
     public User User { get; set; }
     public AssignmentList AssignmentList { get; set; }
+    
+    public void SetConcluded()
+    {
+        Concluded = true;
+        ConcludedAt = DateTime.Now;
+    }
+
+    public void SetUnconcluded()
+    {
+        Concluded = false;
+        ConcludedAt = null;
+    }
 
     public override bool Validar(out ValidationResult validationResult)
     {
