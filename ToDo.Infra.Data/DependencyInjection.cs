@@ -1,5 +1,6 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;
+using Microsoft.Extensions.Logging;
 using ToDo.Infra.Data.Context;
 
 namespace ToDo.Infra.Data;
@@ -11,10 +12,12 @@ public static class DependencyInjection
         var serverVersion = new MySqlServerVersion(ServerVersion.AutoDetect(connectionString));
 
         services.AddDbContext<ApplicationDbContext>(options =>
-        {
-            options.UseMySql(connectionString, serverVersion);
-            options.EnableDetailedErrors();
-            options.EnableSensitiveDataLogging();
-        });
+            {
+                options
+                    .UseMySql(connectionString, serverVersion)
+                    .LogTo(Console.WriteLine, LogLevel.Information)
+                    .EnableSensitiveDataLogging()
+                    .EnableDetailedErrors();
+            });
     }
 }
