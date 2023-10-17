@@ -7,55 +7,56 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="f87f3e74-c10d-40ae-bceb-dd0c4ea15c2a" name="Changes" comment="DTO's criadas">
-      <change afterPath="$PROJECT_DIR$/ToDo.Infra.Data/Migrations/20231017173021_Initial.Designer.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ToDo.Infra.Data/Migrations/20231017173021_Initial.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ToDo.Infra.Data/Migrations/ApplicationDbContextModelSnapshot.cs" afterDir="false" />
+    <list default="true" id="f87f3e74-c10d-40ae-bceb-dd0c4ea15c2a" name="Changes" comment="Resolvendo bug de login de usuário">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.ToDo/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.ToDo/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ToDo.API/Controllers/AssignmentController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/ToDo.API/Controllers/AssignmentController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ToDo.API/Controllers/AssignmentListController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/ToDo.API/Controllers/AssignmentListController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ToDo.API/Controllers/AuthController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/ToDo.API/Controllers/AuthController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ToDo.API/appsettings.json" beforeDir="false" afterPath="$PROJECT_DIR$/ToDo.API/appsettings.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ToDo.Application/AutoMapper/AutoMapperProfile.cs" beforeDir="false" afterPath="$PROJECT_DIR$/ToDo.Application/AutoMapper/AutoMapperProfile.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ToDo.Application/Configurations/AppSettings.cs" beforeDir="false" afterPath="$PROJECT_DIR$/ToDo.Application/Configurations/AppSettings.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ToDo.Application/Contracts/IAssignmentListService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/ToDo.Application/Contracts/IAssignmentListService.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ToDo.Application/Contracts/IAssignmentService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/ToDo.Application/Contracts/IAssignmentService.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ToDo.Application/Contracts/IAuthService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/ToDo.Application/Contracts/IAuthService.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ToDo.Application/DTOs/ViewModel/AssignmentListViewModel.cs" beforeDir="false" afterPath="$PROJECT_DIR$/ToDo.Application/DTOs/ViewModel/AssignmentListViewModel.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ToDo.Application/DTOs/ViewModel/AssignmentViewModel.cs" beforeDir="false" afterPath="$PROJECT_DIR$/ToDo.Application/DTOs/ViewModel/AssignmentViewModel.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ToDo.Application/DTOs/ViewModel/PagedViewModel.cs" beforeDir="false" afterPath="$PROJECT_DIR$/ToDo.Application/DTOs/ViewModel/PagedViewModel.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ToDo.Application/DTOs/ViewModel/TokenViewModel.cs" beforeDir="false" afterPath="$PROJECT_DIR$/ToDo.Application/DTOs/ViewModel/TokenViewModel.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ToDo.Application/DTOs/ViewModel/UserViewModel.cs" beforeDir="false" afterPath="$PROJECT_DIR$/ToDo.Application/DTOs/ViewModel/UserViewModel.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ToDo.Application/Services/AssignmentListService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/ToDo.Application/Services/AssignmentListService.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ToDo.Application/Services/AssignmentService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/ToDo.Application/Services/AssignmentService.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ToDo.Application/Services/AuthService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/ToDo.Application/Services/AuthService.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ToDo.Domain/Validators/UserValidator.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ToDo.Infra.Data/Mappings/AssignmentListMap.cs" beforeDir="false" afterPath="$PROJECT_DIR$/ToDo.Infra.Data/Mappings/AssignmentListMap.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ToDo.Infra.Data/Mappings/AssignmentMap.cs" beforeDir="false" afterPath="$PROJECT_DIR$/ToDo.Infra.Data/Mappings/AssignmentMap.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ToDo.Infra.Data/Mappings/UserMap.cs" beforeDir="false" afterPath="$PROJECT_DIR$/ToDo.Infra.Data/Mappings/UserMap.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ToDo.Infra.Data/ToDo.Infra.Data.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/ToDo.Infra.Data/ToDo.Infra.Data.csproj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ToDo.Domain/Validators/AssignmentListValidator.cs" beforeDir="false" afterPath="$PROJECT_DIR$/ToDo.Domain/Validators/AssignmentListValidator.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
   <component name="HighlightingSettingsPerFile">
     <setting file="mock:///Dummy.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="mock:///Dummy.cs" root0="SKIP_HIGHLIGHTING" />
   </component>
   <component name="MetaFilesCheckinStateConfiguration" checkMetaFiles="false" />
+  <component name="ProjectColorInfo"><![CDATA[{
+  "associatedIndex": 3
+}]]></component>
+  <component name="ProjectId" id="2Wu73u3SLQSBJpYHy06OV1s9pqk" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
     <ConfirmationsSetting value="2" id="Add" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;org.jetbrains.plugins.github.ui.GithubSettingsConfigurable&quot;
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "ASKED_ADD_EXTERNAL_FILES": "true",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "git-widget-placeholder": "master",
+    "node.js.detected.package.eslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "settings.editor.selected.configurable": "org.jetbrains.plugins.github.ui.GithubSettingsConfigurable",
+    "vue.rearranger.settings.migration": "true"
+  },
+  "keyToStringList": {
+    "rider.external.source.directories": [
+      "/home/victorvale/.config/JetBrains/Rider2023.2/resharper-host/DecompilerCache",
+      "/home/victorvale/.config/JetBrains/Rider2023.2/resharper-host/SourcesCache",
+      "/home/victorvale/.local/share/Symbols/src"
+    ]
   }
-}</component>
+}]]></component>
   <component name="RunManager">
     <configuration name="ToDo.API" type="LaunchSettings" factoryName=".NET Launch Settings Profile">
       <option name="LAUNCH_PROFILE_PROJECT_FILE_PATH" value="$PROJECT_DIR$/ToDo.API/ToDo.API.csproj" />
@@ -73,19 +74,46 @@
       </method>
     </configuration>
   </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
+      <changelist id="f87f3e74-c10d-40ae-bceb-dd0c4ea15c2a" name="Changes" comment="DTO's criadas" />
       <created>1691698325362</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1691698325362</updated>
+      <workItem from="1697570421520" duration="2476000" />
     </task>
+    <task id="LOCAL-00001" summary="Resolvendo bug de login de usuário">
+      <option name="closed" value="true" />
+      <created>1697570809090</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1697570809090</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
   <component name="UnityCheckinConfiguration" checkUnsavedScenes="false" />
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
     <MESSAGE value="DTO's criadas" />
-    <option name="LAST_COMMIT_MESSAGE" value="DTO's criadas" />
+    <MESSAGE value="Resolvendo bug de login de usuário" />
+    <option name="LAST_COMMIT_MESSAGE" value="Resolvendo bug de login de usuário" />
   </component>
 </project>
