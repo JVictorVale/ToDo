@@ -10,7 +10,7 @@ public static class SwaggerConfiguration
         {
             Name = "João Victor Vale",
             Email = "joaovictorvale.dev@gmail.com\n",
-            Url = new Uri("")
+            Url = new Uri("https://github.com/JVictorVale")
         };
 
         var license = new OpenApiLicense

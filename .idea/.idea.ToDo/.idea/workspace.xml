@@ -8,18 +8,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="a43affb7-c42e-44d8-af45-96da46f3fa50" name="Changes" comment="Finalizando o ToDo">
-      <change afterPath="$PROJECT_DIR$/.idea/.idea.ToDo/.idea/dataSources.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/.idea.ToDo/.idea/efCoreCommonOptions.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/.idea.ToDo/.idea/efCoreDialogsState.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.ToDo/.idea/efCoreDialogsState.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.ToDo/.idea/efCoreDialogsState.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.ToDo/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.ToDo/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ToDo.API/Configuration/SwaggerConfiguration.cs" beforeDir="false" afterPath="$PROJECT_DIR$/ToDo.API/Configuration/SwaggerConfiguration.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ToDo.API/Program.cs" beforeDir="false" afterPath="$PROJECT_DIR$/ToDo.API/Program.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ToDo.API/ToDo.API.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/ToDo.API/ToDo.API.csproj" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ToDo.API/appsettings.json" beforeDir="false" afterPath="$PROJECT_DIR$/ToDo.API/appsettings.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ToDo.Application/ToDo.Application.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/ToDo.Application/ToDo.Application.csproj" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ToDo.Domain/ToDo.Domain.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/ToDo.Domain/ToDo.Domain.csproj" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ToDo.Infra.Data/Context/ApplicationDbContext.cs" beforeDir="false" afterPath="$PROJECT_DIR$/ToDo.Infra.Data/Context/ApplicationDbContext.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ToDo.Infra.Data/DependencyInjection.cs" beforeDir="false" afterPath="$PROJECT_DIR$/ToDo.Infra.Data/DependencyInjection.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ToDo.Infra.Data/ToDo.Infra.Data.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/ToDo.Infra.Data/ToDo.Infra.Data.csproj" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -31,6 +23,7 @@
   </component>
   <component name="HighlightingSettingsPerFile">
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/44cad551704bc7dae78cc7717b8b9f9313582aa8e67a6585a69de0cc33b4b8/IServiceCollection.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock://C:/Users/T-Gamer/RiderProjects/ToDo/ToDo.Infra.Data/Context/ApplicationDbContext.cs" root0="SKIP_HIGHLIGHTING" />
   </component>
   <component name="MetaFilesCheckinStateConfiguration" checkMetaFiles="true" />
   <component name="ProjectColorInfo">{
@@ -53,6 +46,7 @@
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "WebServerToolWindowFactoryState": "false",
+    "XThreadsFramesViewSplitterKey": "0.36394557",
     "git-widget-placeholder": "master",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
@@ -122,7 +116,10 @@
       <workItem from="1697288321355" duration="6287000" />
       <workItem from="1697464351287" duration="6591000" />
       <workItem from="1697489520390" duration="3144000" />
-      <workItem from="1697492933035" duration="4592000" />
+      <workItem from="1697492933035" duration="5158000" />
+      <workItem from="1697500848006" duration="2271000" />
+      <workItem from="1697503361886" duration="241000" />
+      <workItem from="1697503620865" duration="2275000" />
     </task>
     <task id="LOCAL-00001" summary="Interfaces de repositories encerradas">
       <option name="closed" value="true" />
@@ -148,7 +145,15 @@
       <option name="project" value="LOCAL" />
       <updated>1697472913385</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="Finalizando o ToDo">
+      <option name="closed" value="true" />
+      <created>1697500515631</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1697500515631</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
