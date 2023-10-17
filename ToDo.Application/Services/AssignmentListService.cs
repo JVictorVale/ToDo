@@ -3,6 +3,7 @@ using Microsoft.AspNetCore.Http;
 using ToDo.Application.Contracts;
 using ToDo.Application.DTO.ViewModel;
 using ToDo.Application.DTOs.InputModel;
+using ToDo.Application.DTOs.ViewModel;
 using ToDo.Application.Extensions;
 using ToDo.Application.Notification;
 using ToDo.Domain.Contracts.Interfaces;
@@ -93,12 +94,60 @@ public class AssignmentListService : BaseService, IAssignmentListService
 
     public async Task<AssignmentListViewModel?> Update(int id, UpdateAssignmentListInputModel inputModel)
     {
-        throw new NotImplementedException();
+        if (id != inputModel.Id)
+        {
+            Notificator.Handle("Os IDs não conferem.");
+            return null;
+        }
+
+        var getAssignmentList = await _assignmentListRepository.GetById(id, _httpContextAccessor.GetUserId());
+
+        if (getAssignmentList == null)
+        {
+            Notificator.HandleNotFoundResource();
+            return null;
+        }
+
+        Mapper.Map(inputModel, getAssignmentList);
+
+        if (!await Validate(getAssignmentList))
+        {
+            return null;
+        }
+
+        _assignmentListRepository.UpdateAsync(getAssignmentList);
+
+        if (await _assignmentListRepository.UnityOfWork.Commit())
+        {
+            return Mapper.Map<AssignmentListViewModel>(getAssignmentList);
+        }
+
+        Notificator.Handle("Não foi possível atualizar a lista de tarefa.");
+        return null;
     }
 
     public async Task Delete(int id)
     {
-        throw new NotImplementedException();
+        var getAssignmentList = await _assignmentListRepository.GetById(id, _httpContextAccessor.GetUserId());
+
+        if (getAssignmentList == null)
+        {
+            Notificator.HandleNotFoundResource();
+            return;
+        }
+
+        if (getAssignmentList.Assignments.Any(x => !x.Concluded))
+        {
+            Notificator.Handle("Não é possível excluir lista com tarefas não concluídas.");
+            return;
+        }
+
+        _assignmentListRepository.DeleteAsync(getAssignmentList);
+
+        if (!await _assignmentListRepository.UnityOfWork.Commit())
+        {
+            Notificator.Handle("Não foi possível remover a lista de tarefa.");
+        }
     }
     
     private async Task<bool> Validate(AssignmentList assignmentList)

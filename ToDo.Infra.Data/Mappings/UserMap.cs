@@ -8,14 +8,10 @@ public class UserMap : IEntityTypeConfiguration<User>
 {
     public void Configure(EntityTypeBuilder<User> builder)
     {
-        builder.ToTable("users");
-
-        builder.HasKey(x => x.Id);
-
         builder.Property(x => x.Name)
             .HasColumnName("name")
             .IsRequired()
-            .HasMaxLength(30);
+            .HasMaxLength(150);
 
         builder.Property(x => x.Email)
             .HasColumnName("email")
@@ -25,7 +21,7 @@ public class UserMap : IEntityTypeConfiguration<User>
         builder.Property(x => x.Password)
             .HasColumnName("password")
             .IsRequired()
-            .HasMaxLength(20);
+            .HasMaxLength(250);
 
         builder.Property(x => x.CreateAt)
             .HasColumnName("create_at")
@@ -34,5 +30,14 @@ public class UserMap : IEntityTypeConfiguration<User>
         builder.Property(x => x.UpdateAt)
             .HasColumnName("update_at")
             .ValueGeneratedOnAddOrUpdate();
+        
+        builder
+            .HasMany(x => x.Assignments)
+            .WithOne(x => x.User)
+            .HasForeignKey(x => x.UserId);
+
+        builder
+            .HasMany(x => x.AssignmentLists)
+            .WithOne(x => x.User);
     }
 }

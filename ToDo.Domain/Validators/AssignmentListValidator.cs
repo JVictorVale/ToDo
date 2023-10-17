@@ -19,12 +19,5 @@ public class AssignmentListValidator : AbstractValidator<AssignmentList>
             .NotEqual(0)
             .WithMessage("Id do usuário deve ser informado.");
         
-        RuleFor(a=> a.CreateAt)
-            .Must( createAt => createAt.Date >= DateTime.Today)
-            .WithMessage("A data de expiração não pode ser menor que a data de hoje.");
-        
-        RuleFor(a=> a.UpdateAt)
-            .Must( updateAtt => updateAtt.Date >= DateTime.Today)
-            .WithMessage("A data de expiração não pode ser menor que a data de hoje.");
     }
 }

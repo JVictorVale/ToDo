@@ -8,10 +8,6 @@ public class AssignmentListMap : IEntityTypeConfiguration<AssignmentList>
 {
     public void Configure(EntityTypeBuilder<AssignmentList> builder)
     {
-        builder.ToTable("assignment_list");
-
-        builder.HasKey(c => c.Id);
-
         builder.Property(c => c.Name)
             .HasColumnName("name")
             .IsRequired()

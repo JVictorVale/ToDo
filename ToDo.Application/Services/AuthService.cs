@@ -6,8 +6,8 @@ using Microsoft.AspNetCore.Identity;
 using Microsoft.IdentityModel.Tokens;
 using Microsoft.Extensions.Configuration;
 using ToDo.Application.Contracts;
-using ToDo.Application.DTO.ViewModel;
 using ToDo.Application.DTOs.InputModel;
+using ToDo.Application.DTOs.ViewModel;
 using ToDo.Application.Notification;
 using ToDo.Domain.Contracts.Interfaces;
 using ToDo.Domain.Models;
@@ -37,7 +37,7 @@ public class AuthService : BaseService, IAuthService
 
         var user = await _userRepository.GetByEmailAsync(inputModel.Email);
 
-        if (user != null && _passwordHasher.VerifyHashedPassword(user, user.Password!, inputModel.Password) ==
+        if (user != null && _passwordHasher.VerifyHashedPassword(user, user.Password, inputModel.Password) ==
             PasswordVerificationResult.Success)
         {
             return GenerateToken(user);

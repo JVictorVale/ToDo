@@ -1,4 +1,4 @@
-﻿namespace ToDo.Application.DTO.ViewModel;
+﻿namespace ToDo.Application.DTOs.ViewModel;
 
 public class PagedViewModel<T>
 {
