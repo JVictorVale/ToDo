@@ -2,7 +2,7 @@
 
 public class AppSettings
 {
-    public string Secret { get; set; }
-    public string Issuer { get; set; }
-    public string ValidOn { get; set; }
+    public string Secret { get; set; } = null!;
+    public string Issuer { get; set; } = null!;
+    public string ValidOn { get; set; } = null!;
 }

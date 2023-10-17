@@ -1,4 +1,6 @@
-﻿namespace ToDo.Application.DTO.ViewModel;
+﻿using ToDo.Application.DTOs.ViewModel;
+
+namespace ToDo.Application.DTO.ViewModel;
 
 public class AssignmentListViewModel : DTOs.Base.Base
 {
