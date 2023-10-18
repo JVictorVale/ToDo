@@ -1,6 +1,6 @@
 ﻿namespace ToDo.Application.DTOs.ViewModel;
 
-public class PagedViewModel<T>
+public class PagedDto<T>
 {
     public List<T> List { get; set; } = new();
     public int Page { get; set; }

@@ -28,17 +28,17 @@ public class AuthService : BaseService, IAuthService
         _passwordHasher = passwordHasher;
     }
 
-    public async Task<TokenViewModel?> Login(LoginInputModel inputModel)
+    public async Task<TokenDto?> Login(LoginDto dto)
     {
-        if (!inputModel.Validar(out var validationResult))
+        if (!dto.Validar(out var validationResult))
         {
             Notificator.Handle(validationResult.Errors);
             return null;
         }
 
-        var user = await _userRepository.GetByEmailAsync(inputModel.Email);
+        var user = await _userRepository.GetByEmailAsync(dto.Email);
 
-        if (user != null && _passwordHasher.VerifyHashedPassword(user, user.Password, inputModel.Password) ==
+        if (user != null && _passwordHasher.VerifyHashedPassword(user, user.Password, dto.Password) ==
             PasswordVerificationResult.Success)
         {
             return GenerateToken(user);
@@ -48,17 +48,17 @@ public class AuthService : BaseService, IAuthService
         return null;
     }
 
-    public async Task<UserViewModel?> Register(RegisterInputModel inputModel)
+    public async Task<UserDto?> Register(RegisterDto dto)
     {
-        var user = Mapper.Map<User>(inputModel);
+        var user = Mapper.Map<User>(dto);
 
-        if (!inputModel.Validar(out var validationResult))
+        if (!dto.Validar(out var validationResult))
         {
             Notificator.Handle(validationResult.Errors);
             return null;
         }
 
-        var getUser = await _userRepository.GetByEmailAsync(inputModel.Email);
+        var getUser = await _userRepository.GetByEmailAsync(dto.Email);
 
         if (getUser != null)
         {
@@ -66,18 +66,18 @@ public class AuthService : BaseService, IAuthService
             return null;
         }
 
-        user.Password = _passwordHasher.HashPassword(user, inputModel.Password);
+        user.Password = _passwordHasher.HashPassword(user, dto.Password);
 
         _userRepository.CreateAsync(user);
 
         if (await _userRepository.UnityOfWork.Commit())
-            return Mapper.Map<UserViewModel>(user);
+            return Mapper.Map<UserDto>(user);
 
         Notificator.Handle("Não foi possível cadastrar o usuário");
         return null;
     }
     
-    private TokenViewModel GenerateToken(User user)
+    private TokenDto GenerateToken(User user)
     {
         var tokenHandler = new JwtSecurityTokenHandler();
 
@@ -104,7 +104,7 @@ public class AuthService : BaseService, IAuthService
 
         var encodedToken = tokenHandler.WriteToken(token);
 
-        return new TokenViewModel
+        return new TokenDto
         {
             AccessToken = encodedToken
         };

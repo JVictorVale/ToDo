@@ -1,6 +1,6 @@
 ﻿namespace ToDo.Application.DTOs.ViewModel;
 
-public class UserViewModel
+public class UserDto
 {
     public string Name { get; set; } = null!;
     public string Email { get; set; } = null!;

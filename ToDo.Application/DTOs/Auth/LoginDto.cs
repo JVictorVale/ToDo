@@ -3,14 +3,14 @@ using FluentValidation.Results;
 
 namespace ToDo.Application.DTOs.InputModel;
 
-public class LoginInputModel
+public class LoginDto
 {
     public string Email { get; set; } = null!;
     public string Password { get; set; } = null!;
 
     public bool Validar(out ValidationResult validationResult)
     {
-        var validator = new InlineValidator<LoginInputModel>();
+        var validator = new InlineValidator<LoginDto>();
 
         validator.RuleFor(x => x.Email)
             .NotEmpty()

@@ -9,22 +9,14 @@ public class AssignmentValidator : AbstractValidator<Assignment>
     {
         RuleFor(a => a.Description)
             .NotEmpty()
-            .WithMessage("Descrição deve ser informada.")
+            .WithMessage("A descrição deve ser informada.")
 
             .Length(3, 300)
-            .WithMessage("Descrição deve conter no mínimo 3 caracteres e no máximo 300 caracteres.");
+            .WithMessage("A descrição deve conter no mínimo {MinLength} e no máximo {MaxLength} caracteres.");
 
         RuleFor(a => a.UserId)
             .NotEmpty()
             .NotEqual(0)
-            .WithMessage("Id do usuário deve ser informado.");
-
-        RuleFor(a => a.AssignmentListId)
-            .NotEqual(0)
-            .WithMessage("Id inválido.");
-        
-        RuleFor(a => a.Deadline)
-            .NotEmpty()
-            .WithMessage("O prazo final não pode ser vazio.");
+            .WithMessage("O id do usuário deve ser informado.");
     }
 }

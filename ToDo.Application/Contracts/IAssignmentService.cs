@@ -6,10 +6,10 @@ namespace ToDo.Application.Contracts;
 
 public interface IAssignmentService
 {
-    Task<PagedViewModel<AssignmentViewModel>> SearchAsync(AssignmentSearchInputModel inputModel);
-    Task<AssignmentViewModel?> GetByIdAsync(int id);
-    Task<AssignmentViewModel?> CreateAsync(AddAssignmentInputModel inputModel);
-    Task<AssignmentViewModel?> UpdateAsync(int id, UpdateAssignmentInputModel inputModel);
+    Task<PagedDto<AssignmentDto>> SearchAsync(AssignmentSearchDto dto);
+    Task<AssignmentDto?> GetByIdAsync(int id);
+    Task<AssignmentDto?> CreateAsync(AddAssignmentDto dto);
+    Task<AssignmentDto?> UpdateAsync(int id, UpdateAssignmentDto dto);
     Task DeleteAsync(int id);
     Task MarkConcludedAsync(int id);
     Task MarkDesconcludedAsync(int id);

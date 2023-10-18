@@ -23,22 +23,22 @@ public class AssignmentController : MainController
     
     [HttpPost]
     [SwaggerOperation("Create a task")]
-    [ProducesResponseType(typeof(AssignmentViewModel), StatusCodes.Status201Created)]
+    [ProducesResponseType(typeof(AssignmentDto), StatusCodes.Status201Created)]
     [ProducesResponseType(typeof(BadRequestResult), StatusCodes.Status400BadRequest)]
-    public async Task<IActionResult> Create([FromBody] AddAssignmentInputModel inputModel)
+    public async Task<IActionResult> Create([FromBody] AddAssignmentDto dto)
     {
-        var createAssignment = await _assignmentService.CreateAsync(inputModel);
+        var createAssignment = await _assignmentService.CreateAsync(dto);
         return CreatedResponse("", createAssignment);
     }
     
     [HttpPut("{id}")]
     [SwaggerOperation("Update a task")]
-    [ProducesResponseType(typeof(AssignmentViewModel), StatusCodes.Status200OK)]
+    [ProducesResponseType(typeof(AssignmentDto), StatusCodes.Status200OK)]
     [ProducesResponseType(typeof(BadRequestResult), StatusCodes.Status400BadRequest)]
     [ProducesResponseType(typeof(NotFoundResult), StatusCodes.Status404NotFound)]
-    public async Task<IActionResult> Update(int id, [FromBody] UpdateAssignmentInputModel inputModel)
+    public async Task<IActionResult> Update(int id, [FromBody] UpdateAssignmentDto dto)
     {
-        var updateAssignment = await _assignmentService.UpdateAsync(id, inputModel);
+        var updateAssignment = await _assignmentService.UpdateAsync(id, dto);
         return OkResponse(updateAssignment);
     }
     
@@ -54,7 +54,7 @@ public class AssignmentController : MainController
     
     [HttpGet("{id}")]
     [SwaggerOperation(Summary = "GetById a task")]
-    [ProducesResponseType(typeof(AssignmentViewModel), StatusCodes.Status200OK)]
+    [ProducesResponseType(typeof(AssignmentDto), StatusCodes.Status200OK)]
     [ProducesResponseType(typeof(NotFoundResult), StatusCodes.Status404NotFound)]
     public async Task<IActionResult> GetById(int id)
     {
@@ -64,10 +64,10 @@ public class AssignmentController : MainController
 
     [HttpGet]
     [SwaggerOperation("Search tasks")]
-    [ProducesResponseType(typeof(PagedViewModel<AssignmentViewModel>), StatusCodes.Status200OK)]
-    public async Task<PagedViewModel<AssignmentViewModel>> Search([FromQuery] AssignmentSearchInputModel inputModel)
+    [ProducesResponseType(typeof(PagedDto<AssignmentDto>), StatusCodes.Status200OK)]
+    public async Task<PagedDto<AssignmentDto>> Search([FromQuery] AssignmentSearchDto dto)
     {
-        return await _assignmentService.SearchAsync(inputModel);
+        return await _assignmentService.SearchAsync(dto);
     }
     
     [HttpPatch("{id}/conclude")]

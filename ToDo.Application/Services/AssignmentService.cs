@@ -1,12 +1,10 @@
 ﻿using AutoMapper;
 using Microsoft.AspNetCore.Http;
 using ToDo.Application.Contracts;
-using ToDo.Application.DTO.ViewModel;
 using ToDo.Application.DTOs.InputModel;
 using ToDo.Application.DTOs.ViewModel;
 using ToDo.Application.Extensions;
 using ToDo.Application.Notification;
-using ToDo.Domain.Contracts.Interfaces;
 using ToDo.Domain.Contracts.Repositories;
 using ToDo.Domain.Filter;
 using ToDo.Domain.Models;
@@ -26,16 +24,16 @@ public class AssignmentService : BaseService, IAssignmentService
         _assignmentListRepository = assignmentListRepository;
     }
 
-    public async Task<PagedViewModel<AssignmentViewModel>> SearchAsync(AssignmentSearchInputModel inputModel)
+    public async Task<PagedDto<AssignmentDto>> SearchAsync(AssignmentSearchDto dto)
     {
-        var filter = Mapper.Map<AssignmentFilter>(inputModel);
+        var filter = Mapper.Map<AssignmentFilter>(dto);
         
-        var result = await _assignmentRepository.SearchAsync(_httpContextAccessor.GetUserId(), filter, inputModel.PerPage,
-            inputModel.Page);
+        var result = await _assignmentRepository.SearchAsync(_httpContextAccessor.GetUserId(), filter, dto.PerPage,
+            dto.Page);
 
-        return new PagedViewModel<AssignmentViewModel>
+        return new PagedDto<AssignmentDto>
         {
-            List = Mapper.Map<List<AssignmentViewModel>>(result.Items),
+            List = Mapper.Map<List<AssignmentDto>>(result.Items),
             Total = result.Total,
             Page = result.Page,
             PerPage = result.PerPage,
@@ -43,20 +41,20 @@ public class AssignmentService : BaseService, IAssignmentService
         };
     }
 
-    public async Task<AssignmentViewModel?> GetByIdAsync(int id)
+    public async Task<AssignmentDto?> GetByIdAsync(int id)
     {
         var getAssignment =
             await _assignmentRepository.GetByIdAsync(id, _httpContextAccessor.GetUserId());
 
-        if (getAssignment != null) return Mapper.Map<AssignmentViewModel>(getAssignment);
+        if (getAssignment != null) return Mapper.Map<AssignmentDto>(getAssignment);
 
         Notificator.HandleNotFoundResource();
         return null;
     }
 
-    public async Task<AssignmentViewModel?> CreateAsync(AddAssignmentInputModel inputModel)
+    public async Task<AssignmentDto?> CreateAsync(AddAssignmentDto dto)
     {
-        var assignment = Mapper.Map<Assignment>(inputModel);
+        var assignment = Mapper.Map<Assignment>(dto);
         assignment.UserId = _httpContextAccessor.GetUserId() ?? 0;
 
         if (!await Validate(assignment)) return null;
@@ -64,15 +62,15 @@ public class AssignmentService : BaseService, IAssignmentService
         _assignmentRepository.CreateAsync(assignment);
 
         if (await _assignmentRepository.UnityOfWork.Commit())
-            return Mapper.Map<AssignmentViewModel>(assignment);
+            return Mapper.Map<AssignmentDto>(assignment);
 
         Notificator.Handle("Não foi possível cadastrar a tarefa");
         return null;
     }
 
-    public async Task<AssignmentViewModel?> UpdateAsync(int id, UpdateAssignmentInputModel inputModel)
+    public async Task<AssignmentDto?> UpdateAsync(int id, UpdateAssignmentDto dto)
     {
-        if (id != inputModel.Id)
+        if (id != dto.Id)
         {
             Notificator.Handle("Os ids não conferem");
             return null;
@@ -86,14 +84,14 @@ public class AssignmentService : BaseService, IAssignmentService
             return null;
         }
 
-        var result = Mapper.Map(inputModel, getAssignment);
+        var result = Mapper.Map(dto, getAssignment);
 
         if (!await Validate(result)) return null;
 
         _assignmentRepository.UpdateAsync(getAssignment);
 
         if (await _assignmentRepository.UnityOfWork.Commit())
-            return Mapper.Map<AssignmentViewModel>(result);
+            return Mapper.Map<AssignmentDto>(result);
 
         Notificator.Handle("Não foi possível atualizar a tarefa");
         return null;

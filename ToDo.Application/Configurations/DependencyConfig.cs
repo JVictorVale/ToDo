@@ -6,10 +6,7 @@ using ScottBrady91.AspNetCore.Identity;
 using ToDo.Application.Contracts;
 using ToDo.Application.Notification;
 using ToDo.Application.Services;
-using ToDo.Domain.Contracts.Interfaces;
-using ToDo.Domain.Contracts.Repositories;
 using ToDo.Domain.Models;
-using ToDo.Infra.Data.Repositories;
 
 namespace ToDo.Application.Configurations;
 
@@ -19,11 +16,7 @@ public static class DependencyConfig
     {
         services.AddSingleton(_ => builder.Configuration);
         services.AddSingleton<IHttpContextAccessor, HttpContextAccessor>();
-
-        services.AddScoped<IUserRepository, UserRepository>();
-        services.AddScoped<IAssignmentRepository, AssignmentRepository>();
-        services.AddScoped<IAssignmentListRepository, AssignmentListRepository>();
-
+        
         services.AddScoped<IAuthService, AuthService>();
         services.AddScoped<IAssignmentService, AssignmentService>();
         services.AddScoped<IAssignmentListService, AssignmentListService>();

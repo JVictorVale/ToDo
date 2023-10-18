@@ -13,28 +13,28 @@ public class AutoMapperProfile : Profile
     {
         #region Auth
 
-        CreateMap<User, UserViewModel>().ReverseMap();
-        CreateMap<LoginInputModel, User>().ReverseMap();
-        CreateMap<RegisterInputModel, User>().ReverseMap();
-        CreateMap<UserViewModel, RegisterInputModel>().ReverseMap();
+        CreateMap<User, UserDto>().ReverseMap();
+        CreateMap<LoginDto, User>().ReverseMap();
+        CreateMap<RegisterDto, User>().ReverseMap();
+        CreateMap<UserDto, RegisterDto>().ReverseMap();
 
         #endregion
 
         #region Assignment
 
-        CreateMap<Assignment, AssignmentViewModel>().ReverseMap();
-        CreateMap<AddAssignmentInputModel, Assignment>().ReverseMap();
-        CreateMap<Assignment, UpdateAssignmentInputModel>().ReverseMap();
-        CreateMap<AssignmentSearchInputModel, AssignmentFilter>().ReverseMap();
-        CreateMap<UpdateAssignmentInputModel, AssignmentViewModel>().ReverseMap();
+        CreateMap<Assignment, AssignmentDto>().ReverseMap();
+        CreateMap<AddAssignmentDto, Assignment>().ReverseMap();
+        CreateMap<Assignment, UpdateAssignmentDto>().ReverseMap();
+        CreateMap<AssignmentSearchDto, AssignmentFilter>().ReverseMap();
+        CreateMap<UpdateAssignmentDto, AssignmentDto>().ReverseMap();
 
         #endregion
 
         #region AssignmentList
 
-        CreateMap<AssignmentList, AssignmentListViewModel>().ReverseMap();
-        CreateMap<AddAssignmentListInputModel, AssignmentList>().ReverseMap();
-        CreateMap<UpdateAssignmentListInputModel, AssignmentList>().ReverseMap();
+        CreateMap<AssignmentList, AssignmentListDto>().ReverseMap();
+        CreateMap<AddAssignmentListDto, AssignmentList>().ReverseMap();
+        CreateMap<UpdateAssignmentListDto, AssignmentList>().ReverseMap();
 
         #endregion
     }

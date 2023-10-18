@@ -6,6 +6,6 @@ namespace ToDo.Application.Contracts;
 
 public interface IAuthService
 {
-    Task<TokenViewModel?> Login(LoginInputModel inputModel);
-    Task<UserViewModel?> Register(RegisterInputModel inputModel);
+    Task<TokenDto?> Login(LoginDto dto);
+    Task<UserDto?> Register(RegisterDto dto);
 }

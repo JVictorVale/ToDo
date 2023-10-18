@@ -9,33 +9,37 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="f87f3e74-c10d-40ae-bceb-dd0c4ea15c2a" name="Changes" comment=".">
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.ToDo/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.ToDo/.idea/dataSources.local.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.ToDo/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.ToDo/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ToDo.API/Controllers/AssignmentController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/ToDo.API/Controllers/AssignmentController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ToDo.API/Controllers/AssignmentListController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/ToDo.API/Controllers/AssignmentListController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ToDo.API/Controllers/AuthController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/ToDo.API/Controllers/AuthController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ToDo.API/Program.cs" beforeDir="false" afterPath="$PROJECT_DIR$/ToDo.API/Program.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ToDo.API/appsettings.json" beforeDir="false" afterPath="$PROJECT_DIR$/ToDo.API/appsettings.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ToDo.Application/AutoMapper/AutoMapperProfile.cs" beforeDir="false" afterPath="$PROJECT_DIR$/ToDo.Application/AutoMapper/AutoMapperProfile.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ToDo.Application/Configurations/DependencyConfig.cs" beforeDir="false" afterPath="$PROJECT_DIR$/ToDo.Application/Configurations/DependencyConfig.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ToDo.Application/Contracts/IAssignmentListService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/ToDo.Application/Contracts/IAssignmentListService.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ToDo.Application/Contracts/IAssignmentService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/ToDo.Application/Contracts/IAssignmentService.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ToDo.Application/Contracts/IAuthService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/ToDo.Application/Contracts/IAuthService.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ToDo.Application/DTOs/InputModel/AddAssignmentInputModel.cs" beforeDir="false" afterPath="$PROJECT_DIR$/ToDo.Application/DTOs/Assignment/AddAssignmentDto.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ToDo.Application/DTOs/InputModel/AddAssignmentListInputModel.cs" beforeDir="false" afterPath="$PROJECT_DIR$/ToDo.Application/DTOs/AssignmentList/AddAssignmentListDto.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ToDo.Application/DTOs/InputModel/AssignmentListSearchInputModel.cs" beforeDir="false" afterPath="$PROJECT_DIR$/ToDo.Application/DTOs/AssignmentList/AssignmentListSearchDto.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ToDo.Application/DTOs/InputModel/AssignmentSearchInputModel.cs" beforeDir="false" afterPath="$PROJECT_DIR$/ToDo.Application/DTOs/Assignment/AssignmentSearchDto.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ToDo.Application/DTOs/InputModel/LoginInputModel.cs" beforeDir="false" afterPath="$PROJECT_DIR$/ToDo.Application/DTOs/Auth/LoginDto.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ToDo.Application/DTOs/InputModel/RegisterInputModel.cs" beforeDir="false" afterPath="$PROJECT_DIR$/ToDo.Application/DTOs/Auth/RegisterDto.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ToDo.Application/DTOs/InputModel/UpdateAssignmentInputModel.cs" beforeDir="false" afterPath="$PROJECT_DIR$/ToDo.Application/DTOs/Assignment/UpdateAssignmentDto.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ToDo.Application/DTOs/InputModel/UpdateAssignmentListInputModel.cs" beforeDir="false" afterPath="$PROJECT_DIR$/ToDo.Application/DTOs/AssignmentList/UpdateAssignmentListDto.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ToDo.Application/DTOs/ViewModel/AssignmentListViewModel.cs" beforeDir="false" afterPath="$PROJECT_DIR$/ToDo.Application/DTOs/AssignmentList/AssignmentListDto.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ToDo.Application/DTOs/ViewModel/AssignmentViewModel.cs" beforeDir="false" afterPath="$PROJECT_DIR$/ToDo.Application/DTOs/Assignment/AssignmentDto.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ToDo.Application/DTOs/ViewModel/PagedViewModel.cs" beforeDir="false" afterPath="$PROJECT_DIR$/ToDo.Application/DTOs/Paged/PagedDto.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ToDo.Application/DTOs/ViewModel/TokenViewModel.cs" beforeDir="false" afterPath="$PROJECT_DIR$/ToDo.Application/DTOs/Auth/TokenDto.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ToDo.Application/DTOs/ViewModel/UserViewModel.cs" beforeDir="false" afterPath="$PROJECT_DIR$/ToDo.Application/DTOs/User/UserDto.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ToDo.Application/Services/AssignmentListService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/ToDo.Application/Services/AssignmentListService.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ToDo.Application/Services/AssignmentService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/ToDo.Application/Services/AssignmentService.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ToDo.Application/Services/AuthService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/ToDo.Application/Services/AuthService.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ToDo.Domain/Contracts/Interfaces/IAssignmentListRepository.cs" beforeDir="false" afterPath="$PROJECT_DIR$/ToDo.Domain/Contracts/Repositories/IAssignmentListRepository.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ToDo.Domain/Contracts/Interfaces/IAssignmentRepository.cs" beforeDir="false" afterPath="$PROJECT_DIR$/ToDo.Domain/Contracts/Repositories/IAssignmentRepository.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ToDo.Domain/Contracts/Interfaces/IBaseRepository.cs" beforeDir="false" afterPath="$PROJECT_DIR$/ToDo.Domain/Contracts/Repositories/IBaseRepository.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ToDo.Domain/Contracts/Interfaces/IUserRepository.cs" beforeDir="false" afterPath="$PROJECT_DIR$/ToDo.Domain/Contracts/Repositories/IUserRepository.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ToDo.Domain/Models/Assignment.cs" beforeDir="false" afterPath="$PROJECT_DIR$/ToDo.Domain/Models/Assignment.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ToDo.Domain/Models/AssignmentList.cs" beforeDir="false" afterPath="$PROJECT_DIR$/ToDo.Domain/Models/AssignmentList.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ToDo.Domain/Models/BaseEntity.cs" beforeDir="false" afterPath="$PROJECT_DIR$/ToDo.Domain/Models/BaseEntity.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ToDo.Domain/Models/User.cs" beforeDir="false" afterPath="$PROJECT_DIR$/ToDo.Domain/Models/User.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ToDo.Domain/Validators/AssignmentListValidator.cs" beforeDir="false" afterPath="$PROJECT_DIR$/ToDo.Domain/Validators/AssignmentListValidator.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ToDo.Domain/Filter/AssignmentFilter.cs" beforeDir="false" afterPath="$PROJECT_DIR$/ToDo.Domain/Filter/AssignmentFilter.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ToDo.Domain/Validators/AssignmentValidator.cs" beforeDir="false" afterPath="$PROJECT_DIR$/ToDo.Domain/Validators/AssignmentValidator.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ToDo.Infra.Data/Abstractions/BaseRepository.cs" beforeDir="false" afterPath="$PROJECT_DIR$/ToDo.Infra.Data/Abstractions/BaseRepository.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ToDo.Infra.Data/Extension/ModelBuilderExtension.cs" beforeDir="false" afterPath="$PROJECT_DIR$/ToDo.Infra.Data/Extension/ModelBuilderExtension.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ToDo.Infra.Data/Migrations/20231017011028_Initial.Designer.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ToDo.Infra.Data/Migrations/20231017011028_Initial.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ToDo.Infra.Data/Migrations/20231017173021_Initial.Designer.cs" beforeDir="false" afterPath="$PROJECT_DIR$/ToDo.Infra.Data/Migrations/20231017224835_Initial.Designer.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ToDo.Infra.Data/Migrations/20231017173021_Initial.cs" beforeDir="false" afterPath="$PROJECT_DIR$/ToDo.Infra.Data/Migrations/20231017224835_Initial.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ToDo.Infra.Data/Migrations/ApplicationDbContextModelSnapshot.cs" beforeDir="false" afterPath="$PROJECT_DIR$/ToDo.Infra.Data/Migrations/ApplicationDbContextModelSnapshot.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ToDo.Infra.Data/Repositories/AssignmentListRepository.cs" beforeDir="false" afterPath="$PROJECT_DIR$/ToDo.Infra.Data/Repositories/AssignmentListRepository.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ToDo.Infra.Data/Repositories/AssignmentRepository.cs" beforeDir="false" afterPath="$PROJECT_DIR$/ToDo.Infra.Data/Repositories/AssignmentRepository.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ToDo.Infra.Data/Repositories/UserRepository.cs" beforeDir="false" afterPath="$PROJECT_DIR$/ToDo.Infra.Data/Repositories/UserRepository.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ToDo.Infra.Data/ToDo.Infra.Data.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/ToDo.Infra.Data/ToDo.Infra.Data.csproj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ToDo.Infra.Data/DependencyInjection.cs" beforeDir="false" afterPath="$PROJECT_DIR$/ToDo.Infra.Data/DependencyInjection.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -43,6 +47,7 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="Git.Settings">
+    <option name="PUSH_AUTO_UPDATE" value="true" />
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="HighlightingSettingsPerFile">
@@ -123,7 +128,15 @@
       <option name="project" value="LOCAL" />
       <updated>1697570809090</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="Implementando metodos que faltavam em assignmentlist">
+      <option name="closed" value="true" />
+      <created>1697648234347</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1697648234348</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">

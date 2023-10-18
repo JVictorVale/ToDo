@@ -3,7 +3,7 @@ using FluentValidation.Results;
 
 namespace ToDo.Application.DTOs.InputModel;
 
-public class RegisterInputModel
+public class RegisterDto
 {
     public string Name { get; set; } = null!;
     public string Email { get; set; } = null!;
@@ -12,7 +12,7 @@ public class RegisterInputModel
 
     public bool Validar(out ValidationResult validationResult)
     {
-        var validator = new InlineValidator<RegisterInputModel>();
+        var validator = new InlineValidator<RegisterDto>();
         
         validator.RuleFor(x => x.Name)
             .NotEmpty()

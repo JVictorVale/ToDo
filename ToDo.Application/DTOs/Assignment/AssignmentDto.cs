@@ -1,6 +1,6 @@
 ﻿namespace ToDo.Application.DTOs.ViewModel;
 
-public class AssignmentViewModel : DTOs.Base.Base
+public class AssignmentDto : DTOs.Base.Base
 {
     public string Description { get; set; } = null!;
     public int? AssignmentListId { get; set; }

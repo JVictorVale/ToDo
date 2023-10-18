@@ -2,9 +2,9 @@
 
 namespace ToDo.Application.DTOs.InputModel;
 
-public class AssignmentSearchInputModel : BaseSearch
+public class AssignmentSearchDto : BaseSearch
 {
-    public string Description { get; set; } = null!;
+    public string? Description { get; set; } 
     public DateTime? StartDeadline { get; set; }
     public DateTime? EndDeadline { get; set; }
     public bool? Concluded { get; set; }

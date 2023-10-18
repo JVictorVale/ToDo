@@ -2,7 +2,7 @@
 
 namespace ToDo.Application.DTOs.InputModel;
 
-public class AssignmentListSearchInputModel : BaseSearch
+public class AssignmentListSearchDto : BaseSearch
 {
     public string Name { get; set; } = null!;
     public string Description { get; set; } = null!;

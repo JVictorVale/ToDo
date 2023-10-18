@@ -24,23 +24,23 @@ public class AssignmentListController : MainController
     
     [HttpPost]
     [SwaggerOperation(Summary = "Create a to-do list")]
-    [ProducesResponseType(typeof(AssignmentListViewModel), StatusCodes.Status200OK)]
+    [ProducesResponseType(typeof(AssignmentListDto), StatusCodes.Status200OK)]
     [ProducesResponseType(typeof(BadRequestResponse), StatusCodes.Status400BadRequest)]
     [ProducesResponseType(typeof(NotFoundResult), StatusCodes.Status404NotFound)]
-    public async Task<IActionResult> Create([FromBody] AddAssignmentListInputModel inputModel)
+    public async Task<IActionResult> Create([FromBody] AddAssignmentListDto dto)
     {
-        var createAssignmentList = await _assignmentListService.Create(inputModel);
+        var createAssignmentList = await _assignmentListService.Create(dto);
         return CreatedResponse("", createAssignmentList);
     }
 
     [HttpPut("{id}")]
     [SwaggerOperation(Summary = "Update a to-do list")]
-    [ProducesResponseType(typeof(AssignmentListViewModel), StatusCodes.Status200OK)]
+    [ProducesResponseType(typeof(AssignmentListDto), StatusCodes.Status200OK)]
     [ProducesResponseType(typeof(BadRequestResult), StatusCodes.Status400BadRequest)]
     [ProducesResponseType(typeof(NotFoundResult), StatusCodes.Status404NotFound)]
-    public async Task<IActionResult> Update(int id, [FromBody] UpdateAssignmentListInputModel inputModel)
+    public async Task<IActionResult> Update(int id, [FromBody] UpdateAssignmentListDto dto)
     {
-        var updateAssignmentList = await _assignmentListService.Update(id, inputModel);
+        var updateAssignmentList = await _assignmentListService.Update(id, dto);
         return OkResponse(updateAssignmentList);
     }
 
@@ -56,7 +56,7 @@ public class AssignmentListController : MainController
 
     [HttpGet("{id}")]
     [SwaggerOperation(Summary = "GetById a to-do list")]
-    [ProducesResponseType(typeof(AssignmentListViewModel), StatusCodes.Status200OK)]
+    [ProducesResponseType(typeof(AssignmentListDto), StatusCodes.Status200OK)]
     [ProducesResponseType(typeof(NotFoundResult), StatusCodes.Status404NotFound)]
     public async Task<IActionResult> GetById(int id)
     {
@@ -66,19 +66,19 @@ public class AssignmentListController : MainController
     
     [HttpGet]
     [SwaggerOperation("Search to-do lists")]
-    [ProducesResponseType(typeof(PagedViewModel<AssignmentListViewModel>), StatusCodes.Status200OK)]
-    public async Task<PagedViewModel<AssignmentListViewModel>> Search([FromQuery] AssignmentListSearchInputModel inputModel)
+    [ProducesResponseType(typeof(PagedDto<AssignmentListDto>), StatusCodes.Status200OK)]
+    public async Task<PagedDto<AssignmentListDto>> Search([FromQuery] AssignmentListSearchDto dto)
     {
-        return await _assignmentListService.Search(inputModel);
+        return await _assignmentListService.Search(dto);
     }
     
     [HttpGet("{id}/assignments")]
     [SwaggerOperation("Search for tasks in a to-do list")]
-    [ProducesResponseType(typeof(IEnumerable<AssignmentViewModel>), StatusCodes.Status200OK)]
+    [ProducesResponseType(typeof(IEnumerable<AssignmentDto>), StatusCodes.Status200OK)]
     [ProducesResponseType(typeof(NotFoundResult), StatusCodes.Status404NotFound)]
-    public async Task<IActionResult> SearchAssignments(int id, [FromQuery] AssignmentSearchInputModel inputModel)
+    public async Task<IActionResult> SearchAssignments(int id, [FromQuery] AssignmentSearchDto dto)
     {
-        var getAssignment = await _assignmentListService.SearchAssignments(id, inputModel);
+        var getAssignment = await _assignmentListService.SearchAssignments(id, dto);
         return OkResponse(getAssignment);
     }
 }

@@ -20,22 +20,22 @@ public class AuthController : MainController
     
     [HttpPost("register")]
     [SwaggerOperation(Summary = "Register account")]
-    [ProducesResponseType(typeof(UserViewModel), StatusCodes.Status200OK)]
+    [ProducesResponseType(typeof(UserDto), StatusCodes.Status200OK)]
     [ProducesResponseType(typeof(BadRequestResponse), StatusCodes.Status400BadRequest)]
-    public async Task<IActionResult> Register([FromBody] RegisterInputModel inputModel)
+    public async Task<IActionResult> Register([FromBody] RegisterDto dto)
     {
-        var registerUser = await _authService.Register(inputModel);
+        var registerUser = await _authService.Register(dto);
         return OkResponse(registerUser);
     }
 
     [HttpPost("login")]
     [SwaggerOperation(Summary = "Login in a account")]
-    [ProducesResponseType(typeof(TokenViewModel), StatusCodes.Status200OK)]
+    [ProducesResponseType(typeof(TokenDto), StatusCodes.Status200OK)]
     [ProducesResponseType(typeof(BadRequestResponse), StatusCodes.Status400BadRequest)]
     [ProducesResponseType(StatusCodes.Status404NotFound)]
-    public async Task<IActionResult> Login([FromBody] LoginInputModel inputModel)
+    public async Task<IActionResult> Login([FromBody] LoginDto dto)
     {
-        var token = await _authService.Login(inputModel);
+        var token = await _authService.Login(dto);
         return OkResponse(token);
     }
 }

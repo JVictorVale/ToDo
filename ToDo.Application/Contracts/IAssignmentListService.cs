@@ -6,10 +6,10 @@ namespace ToDo.Application.Contracts;
 
 public interface IAssignmentListService
 {
-    Task<PagedViewModel<AssignmentListViewModel>> Search(AssignmentListSearchInputModel inputModel);
-    Task<PagedViewModel<AssignmentViewModel>?> SearchAssignments(int id, AssignmentSearchInputModel inputModel);
-    Task<AssignmentListViewModel?> GetById(int? id);
-    Task<AssignmentListViewModel?> Create(AddAssignmentListInputModel inputModel);
-    Task<AssignmentListViewModel?> Update(int id ,UpdateAssignmentListInputModel inputModel);
+    Task<PagedDto<AssignmentListDto>> Search(AssignmentListSearchDto dto);
+    Task<PagedDto<AssignmentDto>?> SearchAssignments(int id, AssignmentSearchDto dto);
+    Task<AssignmentListDto?> GetById(int? id);
+    Task<AssignmentListDto?> Create(AddAssignmentListDto dto);
+    Task<AssignmentListDto?> Update(int id ,UpdateAssignmentListDto dto);
     Task Delete(int id);
 }
