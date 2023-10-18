@@ -8,7 +8,7 @@ public abstract class BaseEntity
     public DateTime CreateAt { get; set; }
     public DateTime UpdateAt { get; set; }
 
-    public virtual bool Validar(out ValidationResult validationResult)
+    public virtual bool Validate(out ValidationResult validationResult)
     {
         validationResult = new ValidationResult();
         return validationResult.IsValid;

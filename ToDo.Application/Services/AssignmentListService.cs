@@ -7,6 +7,7 @@ using ToDo.Application.DTOs.ViewModel;
 using ToDo.Application.Extensions;
 using ToDo.Application.Notification;
 using ToDo.Domain.Contracts.Interfaces;
+using ToDo.Domain.Contracts.Repositories;
 using ToDo.Domain.Filter;
 using ToDo.Domain.Models;
 
@@ -152,7 +153,7 @@ public class AssignmentListService : BaseService, IAssignmentListService
     
     private async Task<bool> Validate(AssignmentList assignmentList)
     {
-        if (!assignmentList.Validar(out var validationResult))
+        if (!assignmentList.Validate(out var validationResult))
             Notificator.Handle(validationResult.Errors);
 
         var assignmentExistent = await _assignmentListRepository.FirstOrDefaultAsync(u =>

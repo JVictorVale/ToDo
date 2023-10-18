@@ -1,5 +1,6 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using ToDo.Domain.Contracts.Interfaces;
+using ToDo.Domain.Contracts.Repositories;
 using ToDo.Domain.Filter;
 using ToDo.Domain.Models;
 using ToDo.Infra.Data.Abstractions;

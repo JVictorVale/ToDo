@@ -1,6 +1,5 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata;
-using ToDo.Domain.Contracts.Interfaces;
 using ToDo.Domain.Models;
 
 namespace ToDo.Infra.Data.Extension;

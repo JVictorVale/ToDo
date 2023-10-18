@@ -23,20 +23,8 @@ public class AssignmentValidator : AbstractValidator<Assignment>
             .NotEqual(0)
             .WithMessage("Id inválido.");
         
-        RuleFor(a => a.ConcludedAt)
-            .Must( concludedAt => concludedAt != null && concludedAt.Value.Date >= DateTime.Today)
-            .WithMessage("A data de expiração não pode ser menor que a data de hoje.");
-        
         RuleFor(a => a.Deadline)
-            .Must( deadLine => deadLine != null && deadLine.Value.Date >= DateTime.Today)
-            .WithMessage("A data de expiração não pode ser menor que a data de hoje.");
-        
-        RuleFor(a=> a.CreateAt)
-            .Must( createAt => createAt.Date >= DateTime.Today)
-            .WithMessage("A data de expiração não pode ser menor que a data de hoje.");
-        
-        RuleFor(a=> a.UpdateAt)
-            .Must( updateAtt => updateAtt.Date >= DateTime.Today)
-            .WithMessage("A data de expiração não pode ser menor que a data de hoje.");
+            .NotEmpty()
+            .WithMessage("O prazo final não pode ser vazio.");
     }
 }

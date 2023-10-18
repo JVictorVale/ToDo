@@ -69,11 +69,7 @@ namespace ToDo.Infra.Data.Migrations
 
                     b.HasIndex("UserId");
 
-<<<<<<< HEAD
-                    b.ToTable("assignments", (string)null);
-=======
                     b.ToTable("Assignments");
->>>>>>> origin/master
                 });
 
             modelBuilder.Entity("ToDo.Domain.Models.AssignmentList", b =>
@@ -110,11 +106,7 @@ namespace ToDo.Infra.Data.Migrations
 
                     b.HasIndex("UserId");
 
-<<<<<<< HEAD
-                    b.ToTable("assignment_list", (string)null);
-=======
                     b.ToTable("AssignmentLists");
->>>>>>> origin/master
                 });
 
             modelBuilder.Entity("ToDo.Domain.Models.User", b =>
@@ -136,24 +128,14 @@ namespace ToDo.Infra.Data.Migrations
 
                     b.Property<string>("Name")
                         .IsRequired()
-<<<<<<< HEAD
-                        .HasMaxLength(30)
-                        .HasColumnType("varchar(30)")
-=======
                         .HasMaxLength(150)
                         .HasColumnType("varchar(150)")
->>>>>>> origin/master
                         .HasColumnName("name");
 
                     b.Property<string>("Password")
                         .IsRequired()
-<<<<<<< HEAD
-                        .HasMaxLength(20)
-                        .HasColumnType("varchar(20)")
-=======
                         .HasMaxLength(250)
                         .HasColumnType("varchar(250)")
->>>>>>> origin/master
                         .HasColumnName("password");
 
                     b.Property<DateTime>("UpdateAt")
@@ -163,11 +145,7 @@ namespace ToDo.Infra.Data.Migrations
 
                     b.HasKey("Id");
 
-<<<<<<< HEAD
-                    b.ToTable("users", (string)null);
-=======
                     b.ToTable("Users");
->>>>>>> origin/master
                 });
 
             modelBuilder.Entity("ToDo.Domain.Models.Assignment", b =>

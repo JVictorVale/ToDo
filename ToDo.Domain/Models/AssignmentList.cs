@@ -11,10 +11,10 @@ public class AssignmentList : BaseEntity
     public string Description { get; set; } = null!;
     public int UserId { get; set; }
 
-    public virtual User User { get; set; }
+    public virtual User User { get; set; } = new();
     public virtual Collection<Assignment> Assignments { get; set; } = new();
 
-    public override bool Validar(out ValidationResult validationResult)
+    public override bool Validate(out ValidationResult validationResult)
     {
         validationResult = new AssignmentListValidator().Validate(this);
         return validationResult.IsValid;
