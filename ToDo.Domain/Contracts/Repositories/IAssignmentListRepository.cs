@@ -1,6 +1,7 @@
-﻿using ToDo.Domain.Models;
+﻿using ToDo.Domain.Contracts.Interfaces;
+using ToDo.Domain.Models;
 
-namespace ToDo.Domain.Contracts.Interfaces;
+namespace ToDo.Domain.Contracts.Repositories;
 
 public interface IAssignmentListRepository : IBaseRepository<AssignmentList>
 {

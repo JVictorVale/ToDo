@@ -10,6 +10,7 @@ using ToDo.Application.DTOs.InputModel;
 using ToDo.Application.DTOs.ViewModel;
 using ToDo.Application.Notification;
 using ToDo.Domain.Contracts.Interfaces;
+using ToDo.Domain.Contracts.Repositories;
 using ToDo.Domain.Models;
 
 namespace ToDo.Application.Services;

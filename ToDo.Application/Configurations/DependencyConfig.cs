@@ -7,6 +7,7 @@ using ToDo.Application.Contracts;
 using ToDo.Application.Notification;
 using ToDo.Application.Services;
 using ToDo.Domain.Contracts.Interfaces;
+using ToDo.Domain.Contracts.Repositories;
 using ToDo.Domain.Models;
 using ToDo.Infra.Data.Repositories;
 

@@ -1,6 +1,6 @@
 ﻿using ToDo.Domain.Models;
 
-namespace ToDo.Domain.Contracts.Interfaces;
+namespace ToDo.Domain.Contracts.Repositories;
 
 public interface IUserRepository : IBaseRepository<User>
 {

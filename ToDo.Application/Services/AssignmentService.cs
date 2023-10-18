@@ -7,6 +7,7 @@ using ToDo.Application.DTOs.ViewModel;
 using ToDo.Application.Extensions;
 using ToDo.Application.Notification;
 using ToDo.Domain.Contracts.Interfaces;
+using ToDo.Domain.Contracts.Repositories;
 using ToDo.Domain.Filter;
 using ToDo.Domain.Models;
 
@@ -158,7 +159,7 @@ public class AssignmentService : BaseService, IAssignmentService
     
     private async Task<bool> Validate(Assignment assignment)
     {
-        if(!assignment.Validar(out var validationResult)) 
+        if(!assignment.Validate(out var validationResult)) 
             Notificator.Handle(validationResult.Errors);
         
         var existingAssignmentList =

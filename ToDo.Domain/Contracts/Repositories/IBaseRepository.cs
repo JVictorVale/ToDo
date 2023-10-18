@@ -1,7 +1,8 @@
 using System.Linq.Expressions;
+using ToDo.Domain.Contracts.Interfaces;
 using ToDo.Domain.Models;
 
-namespace ToDo.Domain.Contracts.Interfaces;
+namespace ToDo.Domain.Contracts.Repositories;
 
 public interface IBaseRepository<T> where T : BaseEntity
 {

@@ -12,8 +12,8 @@ public class Assignment : BaseEntity
     public DateTime? ConcludedAt { get; set; }
     public DateTime? Deadline { get; set; }
 
-    public User User { get; set; }
-    public AssignmentList AssignmentList { get; set; }
+    public User User { get; set; } = null!;
+    public AssignmentList AssignmentList { get; set; } = null!;
     
     public void SetConcluded()
     {
@@ -27,7 +27,7 @@ public class Assignment : BaseEntity
         ConcludedAt = null;
     }
 
-    public override bool Validar(out ValidationResult validationResult)
+    public override bool Validate(out ValidationResult validationResult)
     {
         validationResult = new AssignmentValidator().Validate(this);
         return validationResult.IsValid;

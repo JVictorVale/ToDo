@@ -1,7 +1,8 @@
-﻿using ToDo.Domain.Filter;
+﻿using ToDo.Domain.Contracts.Interfaces;
+using ToDo.Domain.Filter;
 using ToDo.Domain.Models;
 
-namespace ToDo.Domain.Contracts.Interfaces;
+namespace ToDo.Domain.Contracts.Repositories;
 
 public interface IAssignmentRepository : IBaseRepository<Assignment>
 {

@@ -11,7 +11,7 @@ using ToDo.Infra.Data.Context;
 namespace ToDo.Infra.Data.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20231017173021_Initial")]
+    [Migration("20231017224835_Initial")]
     partial class Initial
     {
         /// <inheritdoc />

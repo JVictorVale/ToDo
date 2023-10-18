@@ -14,10 +14,8 @@ public class AssignmentListValidator : AbstractValidator<AssignmentList>
             .Length(3, 60)
             .WithMessage("Nome deve conter no mínimo 3 caracteres e no máximo 60 caracteres");
 
-        RuleFor(a => a.UserId)
+        RuleFor(x => x.Description)
             .NotEmpty()
-            .NotEqual(0)
-            .WithMessage("Id do usuário deve ser informado.");
-        
+            .WithMessage("A descrição da lista de tarefas não pode ser vazia.");
     }
 }
