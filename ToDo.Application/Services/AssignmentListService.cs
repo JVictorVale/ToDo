@@ -28,7 +28,7 @@ public class AssignmentListService : BaseService, IAssignmentListService
 
     public async Task<PagedDto<AssignmentListDto>> Search(AssignmentListSearchDto dto)
     {
-        var result = await _assignmentListRepository.Search(_httpContextAccessor.GetUserId(), dto.Name,
+        var result = await _assignmentListRepository.SearchAsync(_httpContextAccessor.GetUserId(), dto.Name,
             dto.Description, dto.PerPage, dto.Page);
 
         return new PagedDto<AssignmentListDto>
@@ -46,7 +46,7 @@ public class AssignmentListService : BaseService, IAssignmentListService
         var httpAccessor = _httpContextAccessor.GetUserId();
         var filter = Mapper.Map<AssignmentFilter>(dto);
 
-        var getAssignment = await _assignmentListRepository.GetById(id, httpAccessor);
+        var getAssignment = await _assignmentListRepository.GetByIdAsync(id, httpAccessor);
 
         if (getAssignment == null)
         {
@@ -69,7 +69,7 @@ public class AssignmentListService : BaseService, IAssignmentListService
 
     public async Task<AssignmentListDto?> GetById(int? id)
     {
-        var getAssignmentList = await _assignmentListRepository.GetById(id, _httpContextAccessor.GetUserId());
+        var getAssignmentList = await _assignmentListRepository.GetByIdAsync(id, _httpContextAccessor.GetUserId());
 
         if (getAssignmentList != null) return Mapper.Map<AssignmentListDto>(getAssignmentList);
 
@@ -101,7 +101,7 @@ public class AssignmentListService : BaseService, IAssignmentListService
             return null;
         }
 
-        var getAssignmentList = await _assignmentListRepository.GetById(id, _httpContextAccessor.GetUserId());
+        var getAssignmentList = await _assignmentListRepository.GetByIdAsync(id, _httpContextAccessor.GetUserId());
 
         if (getAssignmentList == null)
         {
@@ -129,7 +129,7 @@ public class AssignmentListService : BaseService, IAssignmentListService
 
     public async Task Delete(int id)
     {
-        var getAssignmentList = await _assignmentListRepository.GetById(id, _httpContextAccessor.GetUserId());
+        var getAssignmentList = await _assignmentListRepository.GetByIdAsync(id, _httpContextAccessor.GetUserId());
 
         if (getAssignmentList == null)
         {

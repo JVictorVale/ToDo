@@ -9,11 +9,8 @@ public class AssignmentListValidator : AbstractValidator<AssignmentList>
     {
         RuleFor(a => a.Name)
             .NotEmpty()
-            .WithMessage("Nome deve ser informado.")
-
-            .Length(3, 60)
-            .WithMessage("Nome deve conter no mínimo 3 caracteres e no máximo 60 caracteres");
-
+            .WithMessage("O nome da lista de tarefas deve ser informada.");
+            
         RuleFor(x => x.Description)
             .NotEmpty()
             .WithMessage("A descrição da lista de tarefas não pode ser vazia.");

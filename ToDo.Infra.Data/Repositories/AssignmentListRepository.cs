@@ -14,7 +14,7 @@ public sealed class AssignmentListRepository : BaseRepository<AssignmentList>, I
     { }
 
 
-    public async Task<IPagedResult<AssignmentList>> Search(int? userId, string name, string description, int perPage = 10, int page = 1) // entender
+    public async Task<IPagedResult<AssignmentList>> SearchAsync(int? userId, string name, string description, int perPage = 10, int page = 1) // entender
     {
         var query = DbContext.AssignmentLists
             .AsNoTracking()
@@ -42,7 +42,7 @@ public sealed class AssignmentListRepository : BaseRepository<AssignmentList>, I
         return result;
     }
 
-    public async Task<AssignmentList?> GetById(int? id, int? userId) // entender
+    public async Task<AssignmentList?> GetByIdAsync(int? id, int? userId) // entender
     {
         return await DbContext.AssignmentLists
             .Include(c => c.Assignments)

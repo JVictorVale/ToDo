@@ -14,6 +14,10 @@ public class AssignmentValidator : AbstractValidator<Assignment>
             .Length(3, 300)
             .WithMessage("A descrição deve conter no mínimo {MinLength} e no máximo {MaxLength} caracteres.");
 
+        RuleFor(a => a.Deadline)
+            .GreaterThan(DateTime.Now)
+            .WithMessage("O prazo final deve ser maior que a data de hoje.");
+
         RuleFor(a => a.UserId)
             .NotEmpty()
             .NotEqual(0)
