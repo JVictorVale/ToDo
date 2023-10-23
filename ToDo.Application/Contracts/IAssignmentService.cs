@@ -1,6 +1,5 @@
-﻿using ToDo.Application.DTO.ViewModel;
-using ToDo.Application.DTOs.InputModel;
-using ToDo.Application.DTOs.ViewModel;
+﻿using ToDo.Application.DTOs.Assignment;
+using ToDo.Application.DTOs.Paged;
 
 namespace ToDo.Application.Contracts;
 

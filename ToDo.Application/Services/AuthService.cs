@@ -6,10 +6,9 @@ using Microsoft.AspNetCore.Identity;
 using Microsoft.IdentityModel.Tokens;
 using Microsoft.Extensions.Configuration;
 using ToDo.Application.Contracts;
-using ToDo.Application.DTOs.InputModel;
-using ToDo.Application.DTOs.ViewModel;
+using ToDo.Application.DTOs.Auth;
+using ToDo.Application.DTOs.User;
 using ToDo.Application.Notification;
-using ToDo.Domain.Contracts.Interfaces;
 using ToDo.Domain.Contracts.Repositories;
 using ToDo.Domain.Models;
 
@@ -30,7 +29,7 @@ public class AuthService : BaseService, IAuthService
 
     public async Task<TokenDto?> Login(LoginDto dto)
     {
-        if (!dto.Validar(out var validationResult))
+        if (!dto.Validate(out var validationResult))
         {
             Notificator.Handle(validationResult.Errors);
             return null;
@@ -38,11 +37,8 @@ public class AuthService : BaseService, IAuthService
 
         var user = await _userRepository.GetByEmailAsync(dto.Email);
 
-        if (user != null && _passwordHasher.VerifyHashedPassword(user, user.Password, dto.Password) ==
-            PasswordVerificationResult.Success)
-        {
+        if (user != null && _passwordHasher.VerifyHashedPassword(user, user.Password, dto.Password) == PasswordVerificationResult.Success)
             return GenerateToken(user);
-        }
 
         Notificator.Handle("E-mail ou senha estão incorretos.");
         return null;
@@ -52,7 +48,7 @@ public class AuthService : BaseService, IAuthService
     {
         var user = Mapper.Map<User>(dto);
 
-        if (!dto.Validar(out var validationResult))
+        if (!dto.Validate(out var validationResult))
         {
             Notificator.Handle(validationResult.Errors);
             return null;
@@ -68,7 +64,7 @@ public class AuthService : BaseService, IAuthService
 
         user.Password = _passwordHasher.HashPassword(user, dto.Password);
 
-        _userRepository.CreateAsync(user);
+        _userRepository.Create(user);
 
         if (await _userRepository.UnityOfWork.Commit())
             return Mapper.Map<UserDto>(user);
@@ -91,13 +87,8 @@ public class AuthService : BaseService, IAuthService
                 new(ClaimTypes.Name, user.Name),
                 new(ClaimTypes.NameIdentifier, user.Id.ToString())
             }),
-            SigningCredentials =
-                new SigningCredentials(
-                    new SymmetricSecurityKey(key),
-                    SecurityAlgorithms.HmacSha256Signature
-                ),
-            Expires =
-                DateTime.UtcNow.AddHours(int.Parse(_configuration["AppSettings:ExpirationHours"] ?? string.Empty)),
+            SigningCredentials = new SigningCredentials(new SymmetricSecurityKey(key), SecurityAlgorithms.HmacSha256Signature),
+            Expires = DateTime.UtcNow.AddHours(int.Parse(_configuration["AppSettings:ExpirationHours"] ?? string.Empty)),
             Issuer = _configuration["AppSettings:Issuer"],
             Audience = _configuration["AppSettings:ValidOn"]
         });

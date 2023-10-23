@@ -1,7 +1,7 @@
 ﻿using FluentValidation;
 using FluentValidation.Results;
 
-namespace ToDo.Application.DTOs.InputModel;
+namespace ToDo.Application.DTOs.Auth;
 
 public class RegisterDto
 {
@@ -10,7 +10,7 @@ public class RegisterDto
     public string Password { get; set; } = null!;
     public string ConfirmPassword { get; set; } = null!;
 
-    public bool Validar(out ValidationResult validationResult)
+    public bool Validate(out ValidationResult validationResult)
     {
         var validator = new InlineValidator<RegisterDto>();
         

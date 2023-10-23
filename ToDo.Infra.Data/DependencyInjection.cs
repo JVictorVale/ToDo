@@ -2,9 +2,8 @@
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
-using ToDo.Domain.Contracts.Repositories;
+using ToDo.Infra.Data.Configurations;
 using ToDo.Infra.Data.Context;
-using ToDo.Infra.Data.Repositories;
 
 namespace ToDo.Infra.Data;
 
@@ -24,8 +23,6 @@ public static class DependencyInjection
                     .EnableDetailedErrors();
             });
         
-        services.AddScoped<IUserRepository, UserRepository>();
-        services.AddScoped<IAssignmentRepository, AssignmentRepository>();
-        services.AddScoped<IAssignmentListRepository, AssignmentListRepository>();
+        services.ResolveDependencies();
     }
 }

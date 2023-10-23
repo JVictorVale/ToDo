@@ -1,4 +1,4 @@
-﻿namespace ToDo.Application.DTOs.ViewModel;
+﻿namespace ToDo.Application.DTOs.Auth;
 
 public class TokenDto
 {

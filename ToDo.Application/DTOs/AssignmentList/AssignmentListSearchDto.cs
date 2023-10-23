@@ -1,6 +1,6 @@
 ﻿using ToDo.Application.DTOs.Base;
 
-namespace ToDo.Application.DTOs.InputModel;
+namespace ToDo.Application.DTOs.AssignmentList;
 
 public class AssignmentListSearchDto : BaseSearch
 {

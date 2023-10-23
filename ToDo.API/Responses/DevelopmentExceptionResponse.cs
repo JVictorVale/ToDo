@@ -4,7 +4,7 @@ public class DevelopmentExceptionResponse : ExceptionResponse
 {
     public Exception Exception { get; private set; }
 
-    public DevelopmentExceptionResponse(Exception exception) : base()
+    public DevelopmentExceptionResponse(Exception exception)
     {
         Exception = exception;
     }

@@ -4,13 +4,13 @@ using ToDo.Domain.Models;
 
 namespace ToDo.Domain.Contracts.Repositories;
 
-public interface IBaseRepository<T> where T : BaseEntity
+public interface IBaseRepository<T> : IDisposable where T : BaseEntity
 {
-    void CreateAsync(T entity);
+    void Create(T entity);
     Task<T?> GetByIdAsync(int? id);
     Task<List<T>> GetAllAsync();
-    void UpdateAsync(T entity);
-    void DeleteAsync(T entity);
+    void Update(T entity);
+    void Delete(T entity);
     
     public IUnityOfWork UnityOfWork { get; }
     public Task<T?> FirstOrDefaultAsync(Expression<Func<T, bool>> expression);

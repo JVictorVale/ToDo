@@ -28,14 +28,11 @@ public class MainController : ControllerBase
     protected IActionResult CustomResponse(IActionResult objectResult)
     {
         if (ValidOperation)
-        {
             return objectResult;
-        }
         
         if (_notificator.IsNotFoundResource)
-        {
             return NotFound();
-        }
+        
 
         var response = new BadRequestResponse(_notificator.GetNotifications().ToList());
         return BadRequest(response);
@@ -44,10 +41,9 @@ public class MainController : ControllerBase
     protected IActionResult CustomResponse(ModelStateDictionary modelState)
     {
         var errors = modelState.Values.SelectMany(e => e.Errors);
+        
         foreach (var error in errors)
-        {
             AddProcessingError(error.ErrorMessage);
-        }
 
         return CustomResponse(Ok(null));
     }
@@ -55,9 +51,7 @@ public class MainController : ControllerBase
     protected IActionResult CustomResponse(ValidationResult validationResult)
     {
         foreach (var error in validationResult.Errors)
-        {
             AddProcessingError(error.ErrorMessage);
-        }
 
         return CustomResponse(Ok(null));
     }

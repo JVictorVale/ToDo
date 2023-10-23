@@ -14,22 +14,22 @@ public sealed class AssignmentListRepository : BaseRepository<AssignmentList>, I
     { }
 
 
-    public async Task<IPagedResult<AssignmentList>> SearchAsync(int? userId, string name, string description, int perPage = 10, int page = 1) // entender
+    public async Task<IPagedResult<AssignmentList>> SearchAsync(int? userId, string name, string description, int perPage = 10, int page = 1)
     {
         var query = DbContext.AssignmentLists
             .AsNoTracking()
-            .Where(c => c.UserId == userId)
+            .Where(x => x.UserId == userId)
             .AsQueryable();
 
         if (!string.IsNullOrWhiteSpace(name))
-            query = query.Where(c => c.Name.Contains(name));
+            query = query.Where(x => x.Name.Contains(name));
 
         if (!string.IsNullOrWhiteSpace(description))
-            query = query.Where(c => c.Description.Contains(description));
+            query = query.Where(x => x.Description.Contains(description));
 
         var result = new PagedResult<AssignmentList>
         {
-            Items = await query.OrderBy(c => c.Name).Include(c => c.Assignments).Skip((page - 1) * perPage)
+            Items = await query.OrderBy(x => x.Name).Include(x => x.Assignments).Skip((page - 1) * perPage)
                 .Take(perPage).ToListAsync(),
             Total = await query.CountAsync(),
             Page = page,
@@ -42,10 +42,10 @@ public sealed class AssignmentListRepository : BaseRepository<AssignmentList>, I
         return result;
     }
 
-    public async Task<AssignmentList?> GetByIdAsync(int? id, int? userId) // entender
+    public async Task<AssignmentList?> GetByIdAsync(int? id, int? userId)
     {
         return await DbContext.AssignmentLists
-            .Include(c => c.Assignments)
-            .FirstOrDefaultAsync(c => id != null && c.Id == id && c.UserId == userId);
+            .Include(x => x.Assignments)
+            .FirstOrDefaultAsync(x => id != null && x.Id == id && x.UserId == userId);
     }
 }

@@ -1,6 +1,5 @@
-﻿using ToDo.Application.DTO.ViewModel;
-using ToDo.Application.DTOs.InputModel;
-using ToDo.Application.DTOs.ViewModel;
+﻿using ToDo.Application.DTOs.Auth;
+using ToDo.Application.DTOs.User;
 
 namespace ToDo.Application.Contracts;
 

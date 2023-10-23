@@ -1,4 +1,4 @@
-﻿namespace ToDo.Application.DTOs.ViewModel;
+﻿namespace ToDo.Application.DTOs.Assignment;
 
 public class AssignmentDto : DTOs.Base.Base
 {

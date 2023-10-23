@@ -18,12 +18,12 @@ public sealed class AssignmentRepository : BaseRepository<Assignment>, IAssignme
         _dbContext = dbContext;
     }
 
-    public async Task<Assignment?> GetByIdAsync(int id, int? userId) // entender
+    public async Task<Assignment?> GetByIdAsync(int id, int? userId)
     {
         return await _dbContext.Assignments.FirstOrDefaultAsync(c => c.Id == id && c.UserId == userId);
     }
 
-    public async Task<IPagedResult<Assignment>> SearchAsync(int? userId, AssignmentFilter filter, int perPage = 10, int page = 1, int? listId = null) //entender como funciona
+    public async Task<IPagedResult<Assignment>> SearchAsync(int? userId, AssignmentFilter filter, int perPage = 10, int page = 1, int? listId = null)
     {
         var query = DbContext.Assignments
             .AsNoTracking()
@@ -46,7 +46,7 @@ public sealed class AssignmentRepository : BaseRepository<Assignment>, IAssignme
         return result;
     }
     
-    private static void ApplyFilter(int? userId, AssignmentFilter filter, ref IQueryable<Assignment> query, int? listId = null) //entender como funciona
+    private static void ApplyFilter(int? userId, AssignmentFilter filter, ref IQueryable<Assignment> query, int? listId = null)
     {
         if (!string.IsNullOrWhiteSpace(filter.Description))
             query = query.Where(c => c.Description.Contains(filter.Description));

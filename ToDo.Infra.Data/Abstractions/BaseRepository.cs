@@ -7,7 +7,7 @@ using ToDo.Infra.Data.Context;
 
 namespace ToDo.Infra.Data.Abstractions;
 
-public class BaseRepository<T> : IBaseRepository<T> where T : BaseEntity
+public abstract class BaseRepository<T> : IBaseRepository<T> where T : BaseEntity
 {
     private bool _isDisposed;
     private readonly DbSet<T> _dbSet;
@@ -21,12 +21,12 @@ public class BaseRepository<T> : IBaseRepository<T> where T : BaseEntity
 
     public virtual IUnityOfWork UnityOfWork => DbContext;
     
-    public  async Task<T?> FirstOrDefaultAsync(Expression<Func<T, bool>> expression) //entender
+    public  async Task<T?> FirstOrDefaultAsync(Expression<Func<T, bool>> expression)
     {
         return await _dbSet.AsNoTrackingWithIdentityResolution().Where(expression).FirstOrDefaultAsync();
     }
 
-    public virtual void CreateAsync(T entity) //não é async
+    public virtual void Create(T entity)
     {
         _dbSet.Add(entity);
     }
@@ -41,13 +41,34 @@ public class BaseRepository<T> : IBaseRepository<T> where T : BaseEntity
         return await _dbSet.ToListAsync();
     }
 
-    public virtual void UpdateAsync(T entity)
+    public virtual void Update(T entity)
     {
         _dbSet.Update(entity);
     }
 
-    public virtual void DeleteAsync(T entity)
+    public virtual void Delete(T entity)
     {
         _dbSet.Remove(entity);
+    }
+    
+    public void Dispose()
+    {
+        Dispose(true);
+        GC.SuppressFinalize(this);
+    }
+
+    protected virtual void Dispose(bool disposing)
+    {
+        if (_isDisposed)
+        {
+            return;
+        }
+
+        if (disposing)
+        {
+            DbContext.Dispose();
+        }
+
+        _isDisposed = true;
     }
 }

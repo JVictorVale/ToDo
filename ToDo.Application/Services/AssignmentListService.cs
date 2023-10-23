@@ -2,11 +2,11 @@
 using Microsoft.AspNetCore.Http;
 using ToDo.Application.Contracts;
 using ToDo.Application.DTO.ViewModel;
-using ToDo.Application.DTOs.InputModel;
-using ToDo.Application.DTOs.ViewModel;
+using ToDo.Application.DTOs.Assignment;
+using ToDo.Application.DTOs.AssignmentList;
+using ToDo.Application.DTOs.Paged;
 using ToDo.Application.Extensions;
 using ToDo.Application.Notification;
-using ToDo.Domain.Contracts.Interfaces;
 using ToDo.Domain.Contracts.Repositories;
 using ToDo.Domain.Filter;
 using ToDo.Domain.Models;
@@ -26,7 +26,7 @@ public class AssignmentListService : BaseService, IAssignmentListService
         _assignmentListRepository = assignmentListRepository;
     }
 
-    public async Task<PagedDto<AssignmentListDto>> Search(AssignmentListSearchDto dto)
+    public async Task<PagedDto<AssignmentListDto>> SearchAsync(AssignmentListSearchDto dto)
     {
         var result = await _assignmentListRepository.SearchAsync(_httpContextAccessor.GetUserId(), dto.Name,
             dto.Description, dto.PerPage, dto.Page);
@@ -41,7 +41,7 @@ public class AssignmentListService : BaseService, IAssignmentListService
         };
     }
 
-    public async Task<PagedDto<AssignmentDto>?> SearchAssignments(int id, AssignmentSearchDto dto)
+    public async Task<PagedDto<AssignmentDto>?> SearchAssignmentsAsync(int id, AssignmentSearchDto dto)
     {
         var httpAccessor = _httpContextAccessor.GetUserId();
         var filter = Mapper.Map<AssignmentFilter>(dto);
@@ -67,7 +67,7 @@ public class AssignmentListService : BaseService, IAssignmentListService
         };
     }
 
-    public async Task<AssignmentListDto?> GetById(int? id)
+    public async Task<AssignmentListDto?> GetByIdAsync(int? id)
     {
         var getAssignmentList = await _assignmentListRepository.GetByIdAsync(id, _httpContextAccessor.GetUserId());
 
@@ -77,14 +77,14 @@ public class AssignmentListService : BaseService, IAssignmentListService
         return null;
     }
 
-    public async Task<AssignmentListDto?> Create(AddAssignmentListDto dto)
+    public async Task<AssignmentListDto?> CreateAsync(AddAssignmentListDto dto)
     {
         var assignmentList = Mapper.Map<AssignmentList>(dto);
         assignmentList.UserId = _httpContextAccessor.GetUserId() ?? 0;
 
         if (!await Validate(assignmentList)) return null;
 
-        _assignmentListRepository.CreateAsync(assignmentList);
+        _assignmentListRepository.Create(assignmentList);
 
         if (await _assignmentListRepository.UnityOfWork.Commit())
             return Mapper.Map<AssignmentListDto>(assignmentList);
@@ -93,7 +93,7 @@ public class AssignmentListService : BaseService, IAssignmentListService
         return null;
     }
 
-    public async Task<AssignmentListDto?> Update(int id, UpdateAssignmentListDto dto)
+    public async Task<AssignmentListDto?> UpdateAsync(int id, UpdateAssignmentListDto dto)
     {
         if (id != dto.Id)
         {
@@ -116,7 +116,7 @@ public class AssignmentListService : BaseService, IAssignmentListService
             return null;
         }
 
-        _assignmentListRepository.UpdateAsync(getAssignmentList);
+        _assignmentListRepository.Update(getAssignmentList);
 
         if (await _assignmentListRepository.UnityOfWork.Commit())
         {
@@ -127,7 +127,7 @@ public class AssignmentListService : BaseService, IAssignmentListService
         return null;
     }
 
-    public async Task Delete(int id)
+    public async Task DeleteAsync(int id)
     {
         var getAssignmentList = await _assignmentListRepository.GetByIdAsync(id, _httpContextAccessor.GetUserId());
 
@@ -143,7 +143,7 @@ public class AssignmentListService : BaseService, IAssignmentListService
             return;
         }
 
-        _assignmentListRepository.DeleteAsync(getAssignmentList);
+        _assignmentListRepository.Delete(getAssignmentList);
 
         if (!await _assignmentListRepository.UnityOfWork.Commit())
         {

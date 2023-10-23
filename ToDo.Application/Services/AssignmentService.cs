@@ -1,8 +1,8 @@
 ﻿using AutoMapper;
 using Microsoft.AspNetCore.Http;
 using ToDo.Application.Contracts;
-using ToDo.Application.DTOs.InputModel;
-using ToDo.Application.DTOs.ViewModel;
+using ToDo.Application.DTOs.Assignment;
+using ToDo.Application.DTOs.Paged;
 using ToDo.Application.Extensions;
 using ToDo.Application.Notification;
 using ToDo.Domain.Contracts.Repositories;
@@ -59,7 +59,7 @@ public class AssignmentService : BaseService, IAssignmentService
 
         if (!await Validate(assignment)) return null;
 
-        _assignmentRepository.CreateAsync(assignment);
+        _assignmentRepository.Create(assignment);
 
         if (await _assignmentRepository.UnityOfWork.Commit())
             return Mapper.Map<AssignmentDto>(assignment);
@@ -88,7 +88,7 @@ public class AssignmentService : BaseService, IAssignmentService
 
         if (!await Validate(result)) return null;
 
-        _assignmentRepository.UpdateAsync(getAssignment);
+        _assignmentRepository.Update(getAssignment);
 
         if (await _assignmentRepository.UnityOfWork.Commit())
             return Mapper.Map<AssignmentDto>(result);
@@ -107,7 +107,7 @@ public class AssignmentService : BaseService, IAssignmentService
             return;
         }
 
-        _assignmentRepository.DeleteAsync(getAssignment);
+        _assignmentRepository.Delete(getAssignment);
 
         if (!await _assignmentRepository.UnityOfWork.Commit())
         {
@@ -127,7 +127,7 @@ public class AssignmentService : BaseService, IAssignmentService
 
         assignment.SetConcluded();
 
-        _assignmentRepository.UpdateAsync(assignment);
+        _assignmentRepository.Update(assignment);
 
         if (!await _assignmentRepository.UnityOfWork.Commit())
         {
@@ -147,7 +147,7 @@ public class AssignmentService : BaseService, IAssignmentService
 
         assignment.SetUnconcluded();
 
-        _assignmentRepository.UpdateAsync(assignment);
+        _assignmentRepository.Update(assignment);
 
         if (!await _assignmentRepository.UnityOfWork.Commit())
         {

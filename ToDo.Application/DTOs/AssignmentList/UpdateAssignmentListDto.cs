@@ -1,4 +1,4 @@
-﻿namespace ToDo.Application.DTOs.InputModel;
+﻿namespace ToDo.Application.DTOs.AssignmentList;
 
 public class UpdateAssignmentListDto : DTOs.Base.Base
 {

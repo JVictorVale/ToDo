@@ -2,8 +2,8 @@
 using Swashbuckle.AspNetCore.Annotations;
 using ToDo.API.Responses;
 using ToDo.Application.Contracts;
-using ToDo.Application.DTOs.InputModel;
-using ToDo.Application.DTOs.ViewModel;
+using ToDo.Application.DTOs.Auth;
+using ToDo.Application.DTOs.User;
 using ToDo.Application.Notification;
 
 namespace ToDo.API.Controllers;

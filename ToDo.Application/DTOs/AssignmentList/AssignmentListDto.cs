@@ -1,4 +1,4 @@
-﻿using ToDo.Application.DTOs.ViewModel;
+﻿using ToDo.Application.DTOs.Assignment;
 
 namespace ToDo.Application.DTO.ViewModel;
 

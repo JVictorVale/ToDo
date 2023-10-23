@@ -16,9 +16,7 @@ public static class AuthConfig
         var appSettings = appSettingsSection.Get<AppSettings>();
 
         if (appSettings == null)
-        {
             return;
-        }
 
         var key = Encoding.ASCII.GetBytes(appSettings.Secret);
 
