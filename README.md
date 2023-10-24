@@ -14,22 +14,22 @@ O objetivo deste projeto é criar uma API Rest usando .NET 6 e EF Core para gere
 - ScottBrady91.AspNetCore.Identity.Argon2PasswordHasher
 
 ### Registro do Usuário
-- Solicitar `Name`, `Email` e `Password`.
-- Realizar confirmação do `Password`.
-- Verificar se o `Email` já está em uso.
-- O `password` deve ser armazenado usando algum algoritmo de hash.
+- Solicita `Name`, `Email` e `Password`.
+- Realiza a confirmação do `Password`.
+- Verifica se o `Email` já está em uso.
+- O `password` será armazenado usando algoritmo de hash.
 
 ### Login
-- Solicitar `Email` e `Password`.
-- Verificar se o `Password` informado corresponde ao `Password` armazenado.
-- Caso o usuário não seja encontrado ou a senha seja incorreta, retorne um erro genérico, como "Usuário ou senha incorretos".
-- Após as verificações, gere um token `JWT`.
+- Solicita `Email` e `Password`.
+- Verifica se o `Password` informado corresponde ao `Password` armazenado.
+- Caso o usuário não seja encontrado ou a senha seja incorreta, retorna um erro: "Usuário ou senha incorretos".
+- Após as verificações, gera um token `JWT`.
 
 ### Cadastrar uma Lista (AssignmentList)
-- Solicitar um `nome` para a lista.
-- O `UserId` deve ser obtido do `JWT`.
-- Valide se o `nome` foi preenchido.
-- Verifique se o `UserId` não é inválido.
+- Solicita um `nome` para a lista.
+- O `UserId` deve será obtido do `JWT`.
+- Valida se o `nome` foi preenchido.
+- Verifica se o `UserId` não é inválido.
 
 ### Swagger
 
