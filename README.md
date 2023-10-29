@@ -31,6 +31,3 @@ O objetivo deste projeto é criar uma API Rest usando .NET 6 e EF Core para gere
 - Valida se o `nome` foi preenchido.
 - Verifica se o `UserId` não é inválido.
 
-### Swagger
-
-![image](https://github.com/JVictorVale/todo-list-api/assets/114615104/30b4d40e-b75c-4776-8fb1-481fb92f06c6)
